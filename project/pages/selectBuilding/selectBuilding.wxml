@@ -1,0 +1,23 @@
+<!--pages/selectBuilding/selectBuilding.wxml-->
+<view class="container">
+  <view class="page-section">
+     <view class="selcet-building">
+       <!-- <view class="building-search">
+          <view class="search-img" bindtap="search">
+             <image src="../images/search.png"></image>
+          </view>
+          <input value="{{inputValue}}" bindinput='inputBind'  placeholder="请输入楼栋名称"></input> 
+       </view> -->
+       <view class="building-body">
+         <view class="list-item" wx:for="{{list}}" wx:key="*this" data-info="{{item}}" bindtap="selectBuilding">
+            <view class="building-name">
+              <text>{{item.deviceGroupName}}</text>
+            </view>
+            <view class="arrow">
+              <image  src="../images/arrow.png"></image>
+            </view>
+         </view>
+       </view>
+     </view>
+  </view>
+</view>

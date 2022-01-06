@@ -1,0 +1,38 @@
+<!--pages/cardBag/cardBag.wxml-->
+<view class="card_list">
+  <view class="card_title">
+    我的会员卡
+  </view>
+  <view class="no-image" wx:if="{{showHie}}">
+    <image class="" src="../images/noMessage.png">
+    </image>
+    <view class="no-text" >
+      暂无数据
+    </view>
+  </view>
+  <view class="list_item" style="background:url('{{bgImgUrl}}') no-repeat; background-size:100% 100%;" wx:for="{{clubCarList}}" wx:key="item">
+    <view class="card_msgBox">
+        <view class="card_type">{{item.cardTypeName}}</view>
+          <view class="card_content">
+              <view class="content_left">
+                <view class="">
+                  {{item.parkName}}
+                </view>
+                <view class="content_right">
+                  {{item.plateNo}}
+                </view>
+                </view>
+                  <view class="card_time" wx:if="{{ item.carTypeInfo == 1 && item.expireTime != null}}">
+                    {{item.expireTime}}
+                  </view>
+                  <view class="card_time" wx:if="{{item.carTypeInfo == 2}}">
+                    余额: ￥{{item.balance}}
+                  </view>
+          </view>
+                <view class="card_btn" >
+                  <view class="recharge_btn" bindtap='valueCard' data-item='{{item}}' wx:if="{{item.carTypeInfo == 2}}">充值</view>
+                  <view class="recharge_btn" data-item='{{item}}' bindtap='recharging' wx:if="{{item.carTypeInfo == 1}}">续费</view>
+                </view>
+      </view>
+  </view>
+</view>

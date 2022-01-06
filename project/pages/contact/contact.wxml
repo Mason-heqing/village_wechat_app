@@ -1,0 +1,40 @@
+<!--pages/contact/contact.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="contact" hidden="{{showMessage}}">
+      <view class="contact-modal" wx:for="{{list}}" wx:key="*this">
+        <view class="list-content">
+          <view class="item-content">
+            <view class="content">
+              <view class="name">
+                <text>{{item.section}}</text>
+              </view>
+              <view class="phone">
+                <text>{{item.phone}}</text>
+              </view>
+            </view>
+            <view class="call" data-phone="{{item.phone}}" bindtap="callPhone">
+              <image src="../images/property_icon.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="list-bg">
+          <image  wx:if="{{1 == item.bgC}}" src="../images/property_icon_bg.png"></image>
+          <image  wx:elif="{{2 == item.bgC}}" src="../images/baoan_icon_bg.png"></image>
+          <image  wx:else src="../images/clear_bg.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="no-message" hidden="{{noMessage}}">
+       <view class="no-image">
+         <image src="../images/noMessage.png"></image>
+       </view>
+       <view class="no-content">
+         <text>暂无数据</text>
+       </view>
+       <!-- <view class="again-get">
+           <button bindtap="again">重试</button>
+       </view> -->
+    </view>
+  </view>
+</view>

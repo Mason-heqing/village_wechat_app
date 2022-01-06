@@ -1,0 +1,19 @@
+<!--pages/video/video.wxml-->
+<view class="container">
+  <view class="realTimeImg" style="height:{{scrollHeight}}px;">
+    <image src="{{videoImg}}" ></image>
+  </view>
+  <view class="tool">
+    <view class="times">
+      <text>{{times}} 秒之后监控将自动关闭</text>
+    </view>
+    <view class="tool-content">
+      <view class="camera">
+        <view class="btn" bindtap="camera">拍照</view>
+      </view>
+      <view class="openDoor">
+        <view class="btn" bindtap="openDoor">开门</view>
+      </view>
+    </view>
+  </view>
+</view>

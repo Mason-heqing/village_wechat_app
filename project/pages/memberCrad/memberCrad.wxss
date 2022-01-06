@@ -1,0 +1,219 @@
+/* pages/memberCrad/memberCrad.wxss */
+.top_header {
+  position: relative;
+  width: 100%;
+  height: 345rpx;
+  background: #5656ED;
+  border-radius: 100% 100% 100% 100% / 0% 0% 20% 20%;
+}
+.header_title {
+  position: absolute;
+  top: 64rpx;
+  left: 30rpx;
+  width: 288rpx;
+  height: 48rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-family: Microsoft YaHei;
+  opacity: 1;
+}
+.wra_car {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700rpx;
+  height: 390rpx;
+  box-shadow: 0px 3px 12px rgba(117, 117, 117, 0.16);
+  border-radius: 10rpx;
+  opacity: 1;
+  background: #fff;
+}
+.car_cut {
+  width: 132rpx;
+  height: 35rpx;
+  text-align: center;
+  transform: translateX(540rpx);
+  font-size: 26rpx;
+  font-family: Microsoft YaHei;
+  line-height: 35rpx;
+  opacity: 1;
+  margin: 26rpx 0 45rpx 0;
+  color: #5656ED;
+}
+.car_btn {
+  margin: 110rpx auto;
+}
+.weui-cells__title{
+margin-top:.77em;
+margin-bottom:.3em;
+padding-left:15px;
+padding-right:15px;
+color:#999;
+font-size:14px;
+
+}
+/* 选择车牌弹窗 */
+.show_dlog {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d9d9d9;
+  border-radius: 5rpx;
+  z-index: 9999;
+  /* opacity: 0.5; */
+  box-shadow: 0px 3px 12px rgba(117, 117, 117, 0.16);
+  width: 385rpx;
+  height: 250rpx;
+}
+.show_dlog-item {
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+  letter-spacing:17rpx;
+
+}
+.affirm_btn {
+  background: #5656ED;
+  color: #fff;
+}
+/* 虚拟键盘 */
+.keyboard{
+  height: auto;
+  background: #d1d5d9;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  left:0;
+}
+.keyboard-item{
+  padding:10rpx 0 5rpx 0;
+  position: relative;
+  display: block;
+}
+/* 关闭虚拟键盘 */
+.keyboardClose{
+  height: 70rpx;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+.keyboardClose_btn{
+  float: right;
+  line-height: 70rpx;
+  font-size: 15px;
+  padding-right: 30rpx;
+}
+/* 虚拟键盘-省缩写 */
+
+/* 虚拟键盘-行 */
+.keyboard-line{
+  margin:0 auto;
+  text-align: center;
+}
+.iscarnumber .keyboard-line{
+  text-align: left;
+  margin-left: 5rpx;
+}
+/* 虚拟键盘-单个按钮 */
+.keyboard-btn{
+  font-size: 17px;
+  color: #333333;
+  background: #fff;
+  display: inline-block;
+  padding:18rpx 0; 
+  width: 63rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 0 0 #999999;
+  border-radius: 10rpx;
+  margin:5rpx 6rpx;
+}
+/* 虚拟键盘-删除按钮 */
+.keyboard-del{
+  font-size: 17px;
+  color: #333333;
+  background: #A7B0BC;
+  display: inline-block;
+  padding:4rpx 55rpx;
+  box-shadow: 0 2rpx 0 0 #999999;
+  border-radius: 10rpx;
+  margin:5rpx 20rpx;
+  position: absolute;
+  bottom:5rpx;
+  right: 6rpx;
+}
+.keyboard-del-font{
+  font-size:25rpx;
+  line-height: 70rpx;
+}
+
+/* 车牌号码 */
+.carNumber-items{
+  text-align: center;
+}
+
+.carNumber-items-box{
+  width: 150rpx;
+  height: 86rpx;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 30rpx;
+}
+.carNumber-items-box-list{
+  width: 62rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+
+ 
+  vertical-align: middle;
+}
+.carNumber {
+  margin-top: 94rpx;
+}
+.carNumber-items-province{
+  border-right: 1rpx solid #ccc;
+}
+.carNumber-items-box::after{
+  content: "";
+  width: 6rpx;
+  height: 6rpx;
+  position: absolute;
+  right: -22rpx;
+  top: 40rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+.carNumber-item{
+  width: 62rpx;
+  height: 86rpx;
+  font-size: 18px;
+  text-align: center;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  line-height: 90rpx;
+  display: inline-block;
+  margin:0 4rpx;
+  vertical-align: middle;
+}
+/* 新能源 */
+.carNumber-item-newpower{
+  width: 62rpx;
+  border: 2rpx dashed #A8BFF3;
+  background-color: #F6F9FF;
+  color: #A8BFF3;
+  font-size: 12px;
+  line-height: 45rpx;
+}
+.carNumber-newpower-add{
+  font-size: 18px;
+}

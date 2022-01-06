@@ -1,0 +1,42 @@
+/* pages/intercomRecord/intercomRecord.wxss */
+.container{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: rgb(242, 242,242);
+}
+.intercom{
+  padding: 30rpx;
+}
+.intercom-list{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding:0 30rpx;
+  margin-bottom: 30rpx;
+}
+.intercom-left{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
+  line-height: 2;
+}
+.face-img{
+  width: 100rpx;
+  height: 100rpx;
+  padding-right: 10rpx;
+}
+.face-img>image{
+  width: 100%;
+  height: 100%
+}
+.times{
+  font-size: 24rpx;
+  color: #666;
+}
+.intercom-right{
+  font-size: 28rpx;
+}

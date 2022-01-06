@@ -1,0 +1,98 @@
+/* component/showDlog/showDlog.wxss */
+.show_dalog {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+}
+.dalog_img-box {
+  position: absolute;
+  left: 50%;
+  top: 16%;
+  transform: translateX(-50%);
+  height: 644rpx;
+  width: 570rpx;
+}
+.wrapper {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+.activeA {
+  position: absolute;
+  left: 50%;
+  top: 17%;
+  transform: translateX(-50%);
+  height: 570rpx;
+  width: 570rpx;
+}
+.content_box {
+  width: 570rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.content_title {
+  text-align: center;
+  width: 363rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #111111;
+  opacity: 1;
+}
+.content {
+  height: 84rpx;
+  font-size: 30rpx;
+
+  margin-top: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 42rpx;
+  color: #999999;
+  opacity: 1;
+  border: 1rp solid black;
+}
+
+.btn_box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+.active {
+  top:58%
+}
+.clos_btn {
+  width: 240rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #5656ED;
+  border: 1px solid #5656ED;
+  opacity: 1;
+  border-radius: 80rpx;
+}
+.pay_btn {
+  width: 240rpx;
+  height: 88rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 88rpx; 
+  margin-left: 20rpx;
+  background: linear-gradient(89deg, #5656ED 0%, #9697F1 100%);
+  opacity: 1;
+  border-radius: 80rpx;
+}
+.gb {
+  position: absolute;
+  right: 14rpx;
+  top: 14rpx;
+  width: 42rpx;
+  height: 42rpx;
+}

@@ -1,0 +1,122 @@
+/* pages/cardBag/cardBag.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+.card_title {
+  width: 190rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 20rpx 30rpx;
+  font-size: 38rpx;
+  font-family: Microsoft YaHei;
+  color: #111111;
+  opacity: 1;
+}
+.no-image{
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 380rpx;
+  height: 358rpx;
+ 
+}
+.no-image image {
+  width: 100%;
+  height: 100%;
+}
+.no-text {
+  margin: 0 auto;
+  text-align: center;
+  color: #666;
+}
+.list_item {
+  margin: 10rpx auto;
+  width: 690rpx;
+  height: 390rpx;
+  box-shadow: 0px 3px 30px rgba(64, 64, 64, 0.3);
+}
+/* 卡片样式区 */
+.card_msgBox {
+  width: 690rpx;
+  height: 330rpx;
+  margin: 10rpx auto;
+  padding: 10rpx 0;
+
+}
+.card_content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 41rpx;
+  margin-bottom: 35rpx;
+}
+.content_left {
+  margin-left: 33rpx;
+}
+.content_left view:nth-of-type(1) {
+  height: 50rpx;
+  font-size: 35rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 50rpx;
+  color: #FFE5B8;
+  opacity: 1;
+}
+.content_left view:nth-of-type(2) {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  margin: 18rpx 0;
+  color: #FFE5B8;
+  opacity: 1;
+} 
+.card_time {
+  display: inline-block;
+  height: 40rpx;
+  font-size: 28rpx;
+  margin-top: 68rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  color: #FFE5B8;
+  opacity: 1;
+  margin-right: 33rpx;
+}
+.recharge_btn {
+  width: 610rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin:20rpx auto ;
+  background: #E8CB9A;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #474747;
+  border-radius: 10rpx;
+}
+.card_btn button {
+  /* border: 1rpx solid red; */
+  font-size: 36rpx;
+  font-family: Microsoft YaHei;
+  color: #474747 !important;
+  background: #E8CB9A;
+  opacity: 1;
+  
+}
+.card_type {
+  width: 104rpx;
+  height: 37rpx;
+  margin-top: 25rpx;
+  margin-left: 32rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 37rpx;
+  color: #AE9781;
+  opacity: 1;
+}

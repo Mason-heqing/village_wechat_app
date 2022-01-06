@@ -1,0 +1,126 @@
+/* pages/personal/personal.wxss */
+.container{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding:30rpx 0 0 0;
+  background: rgb(242, 242,242);
+}
+.personal-center{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 45rpx 40rpx;
+  background: #fff;
+}
+.person-name{
+  flex-grow: 1;
+}
+.person-name .star{
+  color: #EB102C;
+}
+.details>image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.person-body{
+  margin-top: 10rpx;
+  background: #fff;
+}
+.upfile{
+  /* padding: 0 40rpx; */
+}
+.upfile-title{
+  padding: 30rpx 40rpx;
+  font-size:28rpx;
+}
+.upfile-title text{
+  color:#666;
+}
+.upfile-img{
+  position: relative;
+  padding: 30rpx 70rpx;
+}
+.file-close{
+  position: absolute;
+  top: 15rpx;
+  left:230rpx;
+  width:30rpx;
+  height:30rpx;
+  /* background: #888; */
+  /* color: #fff;
+  line-height: 40rpx;
+  text-align: center;
+  border-bottom-left-radius:50%; */
+}
+.file-close>image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.file-icon{
+  width: 150rpx;
+  height: 150rpx;
+  padding-left: 27rpx;
+}
+.file-icon>image{
+ width: 100%;
+ height: 100%;
+ border-radius: 8rpx;
+ 
+}
+.tips-info{
+   font-size: 24rpx;
+   margin:30rpx 0 40rpx 0;
+   padding: 0 40rpx;
+}
+.tips-info text{
+  color: #999;
+}
+.tips-info>image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.submit-btn{
+  padding:80rpx 40rpx;
+  background: rgb(242, 242,242);
+}
+.submit-btn button{
+  width: 90% !important;
+  height: 88rpx;
+  line-height:1.8;
+  background:#5656ED;
+  color: #fff;
+  /* font-weight: 100; */
+}
+.tips-image{
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 40rpx 0;
+  padding: 0 40rpx;
+}
+.tips-model{
+ flex-grow: 1;
+ text-align: center;
+}
+.tips-icon>image{
+  width: 110rpx;
+  height: 110rpx;
+}
+.tips-text{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.no{
+ color: #E73047;
+  padding-right: 10rpx;
+  font-size:50rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.text-info{
+ color: #666666;
+ text-align: center;
+}

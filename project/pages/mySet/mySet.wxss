@@ -1,0 +1,64 @@
+/* pages/mySet/mySet.wxss */
+.container{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: #F6F6F6;
+}
+.set{
+  margin-top: 2rpx;
+}
+.set-content{
+  padding: 0 30rpx;
+  background: #fff;
+}
+.setPasswword,.setBindPhone{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  background: #fff;
+}
+.setBindPhone{
+  border-bottom: 1rpx solid transparent;
+}
+.name{
+  flex-grow: 1;
+  font-size: 28rpx;
+}
+.detail>image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.out{
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
+.out .out-btn{
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -35%;
+  width: 70% !important;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #E73047;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8rpx;
+}
+.modal-title{
+  border-bottom: 1rpx solid #ccc;
+  padding: 30rpx;
+}
+.model-body{
+  height:170rpx;
+  line-height: 170rpx;
+  text-align: center;
+}

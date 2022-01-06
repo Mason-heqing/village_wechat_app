@@ -1,0 +1,78 @@
+<!--pages/houseThrough/houseThrough.wxml-->
+<view class="container">
+  <view class="page-body" hidden="{{personInfo}}">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section">
+        <view class="section__title">
+          <image src="../images/village_icon.png"></image> 小区</view>
+        <view class="section_name">
+           <text> {{residenceName}}</text>
+        </view>
+      </view>
+       <view class="section">
+        <view class="section__title">
+          <image src="../images/village_icon.png"></image> 楼栋</view>
+        <view class="section_name">
+          <text> {{buildingName}}</text>
+        </view>
+      </view>
+       <view class="section">
+        <view class="section__title">
+          <image src="../images/unit_icon.png"></image> 单元</view>
+        <view class="section_name">
+          <text> {{unitName}}</text>
+        </view>
+      </view>
+       <view class="section">
+        <view class="section__title">
+         <image src="../images/door_icon.png"></image> 房号</view>
+        <view class="section_name">
+          <text> {{deviceGroupName}}</text>
+        </view>
+      </view>
+      <view class="section">
+        <view class="section__title">
+         <image src="../images/date_icon.png"></image> 有效期</view>
+        <view class="section_name" style="text-align:right;">
+          <text> {{effectiveTime}}</text>
+        </view>
+      </view>
+      <view class="section">
+        <view class="section__title">
+         <image src="../images/door_icon.png"></image> 证件号</view>
+        <view class="section_name" style="text-align:right;">
+          <text> {{idNum}}</text>
+        </view>
+      </view>
+       <view class="section">
+        <view class="section__title">
+          <image src="../images/status_icon.png"></image> 状态</view>
+        <view class="section_name">
+          <text style="color:#FF8B33;" wx:if="{{(0 == bindStatus || 1 == bindStatus || 5 == bindStatus) && idT== 2 }}">待审核</text>
+          <text style="color:#FF8B33;" wx:elif="{{(0 == bindStatus || 1 == bindStatus || 5 == bindStatus) && idT== 1 }}">待人证核验</text>
+          <text style="color:#999999;" wx:elif="{{8 == bindStatus}}">已取消</text>
+          <text style="color:#E73047" wx:elif="{{2 == bindStatus || 4 == bindStatus}}">已拒绝</text>
+          <text wx:else style="color:#76C945">已通过</text>
+        </view>
+      </view>
+      <view class="reason" wx:if="{{2 == bindStatus || 4 == bindStatus}}">
+         <view class="reason-title">
+           <text>拒绝原因</text>
+         </view>
+         <view class="reason-content">
+            <textarea value="{{bindFailReseaon}}"></textarea>
+         </view>
+      </view>
+      <view class="btn-area" wx:if="{{0 == bindStatus || 1 == bindStatus || 5 == bindStatus}}">
+        <button form-type="submit" bindtap="cancel">取消申请</button>
+      </view>
+      <view class="btn-cancel" wx:elif="{{8 == bindStatus}}">
+         <button form-type="submit" bindtap="delect">删除记录</button>
+         <button class="agin" form-type="submit" bindtap="again">再次申请</button>
+      </view>
+      <view class="btn-area" wx:elif="{{2 == bindStatus || 4 == bindStatus}}">
+         <button form-type="submit" bindtap="delect">删除记录</button>
+      </view>
+    </form>
+  </view>
+</view>

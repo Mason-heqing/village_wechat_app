@@ -1,0 +1,24 @@
+/* pages/success/success.wxss */
+.su_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50rpx 0;
+}
+.su_wrapper image {
+  width: 128rpx;
+  height: 128rpx;
+}
+.bottom_pay {
+  margin-top: 290rpx;
+}
+.bottom_pay button {
+  width: 650rpx;
+  background: #1aad19;
+  font-size: 36rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #FFFFFF;
+  opacity: 1;
+}

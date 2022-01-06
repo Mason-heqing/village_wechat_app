@@ -1,0 +1,38 @@
+<!--pages/mySet/mySet.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="set">
+       <view class="set-content">
+         <view class="setPasswword" bindtap="setPassword">
+          <view class="name">
+            <text>修改密码</text>
+          </view>
+          <view class="detail">
+            <image src="../images/arrow.png"></image>
+          </view>
+       </view>
+       <view class="setBindPhone" bindtap="setPhone">
+           <view class="name">
+              <text>更换绑定手机</text>
+           </view>
+           <view class="detail">
+             <image src="../images/arrow.png"></image>
+           </view>
+       </view>
+       </view>
+       <view class="out">
+         <view class="out-btn" bindtap="signOut">退出登录</view>
+       </view>
+    </view>
+  </view>
+</view>
+<modal show="{{openDoorMessage}}" height='24%' width='80%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
+   <view class='modal-content'>
+        <view class="modal-title"><text>提示信息</text></view>
+        <view class="model-body">
+         <view class="model-content">
+           <text>确您定要退出吗?</text>
+         </view>
+        </view>
+   </view>
+</modal>

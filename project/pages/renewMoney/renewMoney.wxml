@@ -1,0 +1,92 @@
+<!--pages/renewMoney/renewMoney.wxml-->
+<!-- 顶部卡片信息 储值卡 -->
+<view class="">
+        <view wx:if="{{FromType == 2}}" class="list_item" style="background:url('{{bgImgUrl}}') no-repeat; background-size:100% 100%;"  >
+          <view class="card_msgBox">
+              <view class="card_type">{{cardName}}</view>
+                <view class="card_content">
+                    <view class="content_left">
+                      <view class="">
+                        {{parkName}}
+                      </view>
+                      <view class="content_right">
+                        {{plateNo}}
+                      </view>
+                      </view>
+                        <view class="card_time">
+                          余额:￥{{balance}}
+                        </view>
+                      
+                </view>
+                
+            </view>
+        <view class="recharge_btn" bindtap='valueRecharge'  data-item='{{item}}'>
+            充值
+        </view>
+      </view>
+
+
+<!-- 月卡 -->
+  <view class="my_scrollB">
+        <view wx:if="{{FromType == 1}}" class="list_item item_b" style="background:url('{{bgImgUrl}}') no-repeat; background-size:100% 100%;"  >
+      <view class="card_msgBox">
+          <view class="card_type">{{cardName}}</view>
+            <view class="card_content">
+                <view class="content_left">
+                  <view class="">
+                    {{parkName}}
+                  </view>
+                  <view class="content_right">
+                    {{plateNo}}
+                  </view>
+                  </view>
+                    <view class="card_time">
+                      {{expireTime}}
+                    </view>
+            </view>
+        </view>
+    </view>
+  </view>
+    
+
+  <view class="" wx:if="{{FromType == 1}}">
+    <view class="list_title">
+    选择充值金额
+  </view>
+  
+<!-- 充值金额选择列表 -->
+  <view class="wrap_list {{idx == index ? 'mActive' : ''}}" wx:for="{{moneyList}}" wx:key="{{item}}" data-item='{{item}}' data-index='{{index}}' bindtap='confirmIndex' >
+      <view class="list_month" >
+        <view class="" >
+          {{item.monthCount}}月
+        </view>
+        <view class="">
+          有效期至：{{item.expireTime}}
+        </view>
+    </view>
+    <view class="list_number">
+      ￥{{item.fee}}
+    </view>
+    <view class="status_img {{idx == index ? 'mActiveB' :''}}">
+      <image class="" src="../images/gou.png">
+      </image>
+    </view>
+  </view>
+  <view class="bottom_btn" >
+    <view class="btn_num">
+      <view class="btn_titl" >
+        金额：
+      </view>
+      <view class="btn_sum" >
+        ￥{{valueNumber}}
+      </view>
+    </view>
+    <view class="btn_recharge" bindtap='toreCharge' data-item='{{item}}'>
+      续费
+    </view>
+  </view>
+  
+
+  </view>
+  
+</view>

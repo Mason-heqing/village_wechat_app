@@ -1,0 +1,37 @@
+<!--pages/monitor/monitor.wxml-->
+<view class="container">
+  <view class="page-section">
+     <view class="long-range" hidden="{{showMessage}}" wx:for="{{list}}" wx:key="*this">
+        <view class="video-header">
+           <view class="title-name">{{item.deviceAddressName}}</view>
+           <view class="number">呼叫编号:{{item.callNo}}</view>
+        </view>
+        <view class="video-body">
+           <view class="long-range-model" wx:for="{{item.doorList}}" wx:key="{{item.doorList.deviceId}}"  data-online="{{item.online}}" data-deviceId="{{item.deviceId}}" bindtap="video">
+            <view class="lang-range-model-bg" style="background:{{item.online?'#fff':'#eee'}};box-shadow:{{item.online?'0px 2px 12px rgba(238,238,238,1);':'0px 2px 12px rgba(238,238,238,1)'}};">
+              <view class="icon">
+              <!-- <image src="../images/monitorPage.png"></image> -->
+              <image wx:if="{{item.online}}" src="../images/monitorPage.png"></image>
+              <image wx:else src="../images/monitorPage_off.png"></image>
+            </view>
+            <view class="long-range-name">
+              <text>{{item.address}}</text>
+            </view>
+            </view>
+        </view>
+        </view>
+     </view>
+     <view class="no-message" hidden="{{noMessage}}">
+       <view class="no-image">
+         <image src="../images/noMessage.png"></image>
+       </view>
+       <view class="no-content">
+         <text>暂无设备</text>
+       </view>
+       <view class="again-get">
+           <button bindtap="again">重试</button>
+       </view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,16 @@
+<!--pages/visitorAuthorization/visitorAuthorization.wxml-->
+<view class="container">
+  <view class="visitor-pages">
+    <view class="title">
+       <text>请选择授权方式</text>
+    </view>
+    <view class="list-btn" bindtap="visitorRegister">
+      <image src="../images/person-add.png"></image>
+      <text class="apply">登记访客</text>
+    </view>
+    <view class="list-btn" bindtap="invitationVisitor">
+      <image src="../images/wechat.png"></image>
+      <text class="apply">邀请访客</text>
+    </view>
+  </view>
+</view>

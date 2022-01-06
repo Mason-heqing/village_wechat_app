@@ -1,0 +1,131 @@
+/* pages/user/user.wxss */
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background:#fff;
+}
+.user-header{
+  padding: 0 30rpx;
+  height:190rpx;
+  /* border-bottom-left-radius: 80rpx;
+  border-bottom-right-radius: 80rpx; */
+  background: #5656ED;
+}
+.header-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 220rpx;
+}
+.face-img>image{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+.user-name{
+  width: 50%;
+  padding-left: 30rpx;
+}
+.user-edit{
+  width: 50%;
+  text-align: right;
+}
+.user-edit>image{
+  width: 26rpx;
+  height: 26rpx;
+}
+.user-body{
+  width:100%;
+  position: absolute;
+  top:110rpx;
+  left: 0;
+  /* padding: 0 30rpx; */
+}
+.classification{
+  /* width: 100%; */
+  padding: 0 30rpx;
+}
+.item-classification{
+  background: #fff;
+  border-radius: 10rpx;
+  /* box-shadow: inset 0rpx 0rpx 5rpx 4rpx #f0f0f0; */
+  box-shadow:0rpx 4rpx 24rpx rgba(0,0,0,0.16);
+}
+.classification-model{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  /* flex-grow: 1; */
+  font-size: 28rpx;
+  /* text-align: center; */
+  padding: 30rpx;
+}
+.tool-show{
+  margin: 30rpx;
+  background:rgba(255,255,255,1);
+  /* box-shadow:0px 4rpx 24rpx rgba(238,238,238,1); */
+  box-shadow:0px 4px 24px rgba(238,238,238,1);
+  border-radius:12rpx;
+  /* border:1rpx solid #ccc; */
+  /* border-radius: 10rpx; */
+  /* background: #fff; */
+}
+.show-model{
+  display: flex;
+  flex-direction: row;
+  padding:24rpx 30rpx;
+  border-bottom:2rpx solid #f0f0f0f0;
+  align-items: center;
+}
+.show-model:last-child{
+  border-bottom: none;
+}
+.tool-img>image{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+.tool-img>image{
+  padding-top: 10rpx;
+  width:38rpx;
+  height:38rpx;
+}
+.tool-more>image{
+  width: 26rpx;
+  height: 26rpx;
+}
+.tool-name{
+  flex-grow: 2;
+  padding-left: 20rpx;
+}
+.tool-more{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tool-more .info{
+   padding-right: 10rpx;
+   font-size: 24rpx;
+}
+.info-new{
+  border: 1px solid red;
+  padding: 10rpx;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  background: red;
+}
+.modal-title{
+  border-bottom: 1rpx solid #ccc;
+  padding: 30rpx;
+}
+.model-body{
+  height:170rpx;
+  line-height: 170rpx;
+  text-align: center;
+}

@@ -1,0 +1,45 @@
+<!--pages/reportList/reportList.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view  style='height:{{scrollHeight}}px;' hidden="{{showMessage}}">
+      <view class="report-list" wx:for="{{list}}" wx:key="*this" data-title="{{item.title}}" data-date="{{item.date}}" data-content="{{item.report}}" data-proposal="{{item.proposal}}" data-imgs="{{item.imgs}}" bindtap="details">
+        <view class="list-header">
+          <view class="city">
+            <!-- <text>{{item.city}}</text> -->
+            <view class="city-name"><text>{{item.province}}</text></view>
+            <view class="city-name dot"></view>
+            <view class="city-name"><text>{{item.area}}</text></view>
+          </view>
+          <view class="times">
+            <text>{{item.date}}</text>
+          </view>
+        </view>
+        <view class="list-body">
+          <view class="left">
+            <view class="adress">
+              <text>{{item.adress}}</text>
+            </view>
+            <view class="report-content">
+              <view class="content-info">
+                <text>{{info}}: </text>
+                <text class="show-content">{{item.report}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="right"  >
+            <image wx:if="{{0=== item.dealStatus}}" src="../images/unprocessed.png"></image>
+            <image wx:else src="../images/handle.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="no-message" hidden="{{noMessage}}">
+       <view class="no-image">
+         <image src="../images/noMessage.png"></image>
+       </view>
+       <view class="no-content">
+         <text>暂无数据</text>
+       </view>
+    </view>
+  </view>
+</view>

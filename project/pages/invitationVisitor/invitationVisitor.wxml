@@ -1,0 +1,35 @@
+<!--pages/invitationVisitor/invitationVisitor.wxml-->
+<!--pages/authorization/authorization.wxml-->
+<view class="container">
+  <view class="page-body">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <!-- <view class="section">
+        <view class="section__title">
+          到访时间 <text class="star">*</text></view>
+        <view class="section_name" style="text-align:right;">
+          <picker mode ="date"  start="{{date}}"  bindchange="bindMultiPickerChange" 
+           value="{{multiIndex}}">
+            <input name="date" hidden='true' value="{{form.date}}" />
+            <text style="color:{{timesColor}}">{{form.date}}</text>
+            <image class="right_img" src='../images/arrow.png'></image>
+          </picker>
+        </view>
+      </view> -->
+      <view class="section">
+        <view class="section__title">
+          到访地址 <text class="star">*</text></view>
+        <view class="section_name" style="text-align:right;">
+          <input hidden="true" value="{{form.adress}}" name="adress"></input>
+          <text>{{form.adress}}</text>
+        </view>
+      </view>
+      <view style="width:100%;height:120rpx;border-top:1rpx solid #eee"></view>
+      <view class="btn-area">
+        <button wx:if="{{adressContent}}" class='nodisabled' open-type='share'>
+          发送邀请
+        </button>
+        <button wx:else class='disabled' disabled="true" form-type="submit">发送邀请</button>
+      </view>
+    </form>
+  </view>
+</view>

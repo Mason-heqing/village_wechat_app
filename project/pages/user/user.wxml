@@ -1,0 +1,54 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="user-header">
+      <view class="header-content"></view>
+    </view>
+    <view class="user-body">
+      <view class="classification">
+        <view class="item-classification">
+          <view class="classification-model">
+            <view class="face-img" data-img="{{faceImg}}" hidden="{{showStatus}}" bindtap='previewImg'>
+              <image src="{{faceImg}}"></image>
+            </view>
+            <view class="user-name">
+              <text>{{personName}}</text>
+            </view>
+            <view class="user-edit" bindtap="personal">
+              <image src="../images/arrow.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="tool-show">
+        <view class="show-model" wx:for="{{service}}" wx:key="*this" bindtap="{{item.event}}">
+          <view class="tool-img">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="tool-name">
+            <text>{{item.text}}</text>
+          </view>
+          <view class="tool-more">
+            <view class="info" wx-if="{{item.info}}">
+              <text class="info-new">发现新版本</text>
+              <text>v1.0.3</text>
+            </view>
+            <image src="../images/arrow.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <modal show="{{openDoorMessage}}" height='24%' width='80%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
+  <view class='modal-content'>
+    <view class="modal-title">
+      <text>提示信息</text>
+    </view>
+    <view class="model-body">
+      <view class="model-content">
+        <text>您未填写个人信息是否现在去填写</text>
+      </view>
+    </view>
+  </view>
+</modal> -->

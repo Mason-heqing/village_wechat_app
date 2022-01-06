@@ -1,0 +1,221 @@
+/* pages/renewMoney/renewMoney.wxss */
+.list_item {
+  margin: 15rpx auto;
+  width: 690rpx;
+  height: 360rpx;
+  box-shadow: 0px 3px 30px rgba(64, 64, 64, 0.3);
+  border-radius: 10rpx;
+
+}
+.item_b {
+  height: 240rpx;
+}
+/* 卡片样式区 */
+.card_msgBox {
+  width: 690rpx;
+  height: 210rpx;
+  margin: 10rpx auto;
+  padding: 5rpx 0;
+  
+}
+
+.card_content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 41rpx;
+  margin-bottom: 35rpx;
+  
+
+}
+.content_left {
+  margin-left: 33rpx;
+}
+.content_left view:nth-of-type(1) {
+  height: 50rpx;
+  font-size: 35rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 50rpx;
+  overflow: hidden;
+  color: #FFE5B8;
+  opacity: 1;
+}
+.content_left view:nth-of-type(2) {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  margin-top: 18rpx;
+  color: #FFE5B8;
+  opacity: 1;
+} 
+.card_time {
+  height: 40rpx;
+  font-size: 28rpx;
+  margin-top: 68rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-align: right;
+  line-height: 40rpx;
+  color: #FFE5B8;
+  opacity: 1;
+  margin-right: 33rpx;
+}
+.card_type {
+  height: 37rpx;
+  margin-top: 25rpx;
+  margin-left: 32rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 37rpx;
+  color: #AE9781;
+  opacity: 1;
+}
+.list_title {
+  width: 230rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+  font-size: 38rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 50rpx;
+  margin-top: 10rpx;
+  color: #111111;
+  opacity: 1;
+}
+.recharge_btn {
+  width: 610rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin:20rpx auto ;
+  background: #E8CB9A;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #474747;
+  border-radius: 10rpx;
+}
+/* List列表 */
+.wrap_list {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx auto;
+  width: 690rpx;
+  height: 142rpx;
+  background: #FFFFFF;
+  border: 1px solid #E2E2E2;
+  box-shadow: 0px 3rpx 12rpx rgba(0, 0, 0, 0.08);
+  opacity: 1;
+  border-radius: 8rpx;
+}
+.list_month {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20rpx;
+}
+.list_month view:nth-of-type(1) {
+  width: 98rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 40rpx;
+  color: #111111;
+  opacity: 1;
+}
+.list_month view:nth-of-type(2) {
+  height: 31rpx;
+  font-size: 24rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 31rpx;
+  color: #999999;
+  opacity: 1;
+}
+.list_number {
+  width: 125rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  z-index: 9999;
+  line-height: 40rpx;
+  color: #111111;
+  transform: translateX(-50rpx);
+  opacity: 1;
+  margin-top: 50rpx;
+}
+.status_img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  width: 48rpx;
+  height: 42rpx;
+}
+.status_img image {
+  width: 100%;
+  height: 100%;
+}
+.mActive {
+  border: 1px solid #5656ED;
+}
+.mActiveB {
+  display: block;
+}
+/* 底部充值按钮 */
+.bottom_btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.07);
+  background: #FFFFFF;
+  height: 100rpx;
+
+}
+.btn_recharge {
+  width: 290rpx;
+  height: 98rpx;
+  text-align: center;
+  background: #5656ED;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 100rpx;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.btn_num {
+  display: flex;
+  width: 460rpx;
+
+}
+.btn_titl {
+  font-size: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-left: 32rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 600;
+  color: #111111;
+  opacity: 1;
+
+}
+.btn_sum {
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #EB362F;
+  opacity: 1;
+}

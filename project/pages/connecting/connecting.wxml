@@ -1,0 +1,87 @@
+<!--pages/connecting/connecting.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="connect">
+      <view class="times" hidden="{{times}}">
+        <text>{{clock}}</text>
+      </view>
+      <view class="videos" style='height:{{scrollHeight}}px;'>
+        <image src="../images/faceImgDefault.png"></image>
+      </view>
+      <view class="tool">
+        <view wx:if="{{connectStatus}}" class="voice-server">
+          <view class="server-item">
+            <view class="server-img" bind:touchstart="cameraDownStart" bind:touchend="cameraDownEnd">
+              <image src="{{camera}}"></image>
+            </view>
+            <text>拍照</text>
+          </view>
+          <view class="server-item">
+            <view class="server-img" bind:touchstart="microOhoneDownStart" bind:touchend="microOhoneDownEnd">
+              <image src="{{microphone}}"></image>
+            </view>
+            <text>麦克风</text>
+          </view>
+          <view class="server-item">
+            <view class="server-img" bind:touchstart="silenceDownStart" bind:touchend="silenceDownEnd">
+              <image src="{{silence}}"></image>
+            </view>
+            <text>静音</text>
+          </view>
+        </view>
+        <view wx:else class="voice-server silence-set">
+          <view class="server-item" bindtap="silenceSet">
+            <view class="server-img silence-set-icon">
+              <image src="{{silenceSetIcon}}"></image>
+            </view>
+            <text>{{silenceName}}</text>
+          </view>
+        </view>
+        <view wx:if="{{!connectStatus}}" class="tool-btn">
+          <view class="tool-server">
+            <view class="server-content">
+              <view class="btn-server hang-up">
+                <image src="../images/icon_facetalk_hangup.png"></image>
+              </view>
+            </view>
+            <view class="dev">
+              <text>挂断</text>
+            </view>
+          </view>
+          <view class="tool-server">
+            <view class="server-content">
+              <view class="btn-server facetalk_answer" bindtap="facetalkAnswer">
+                <image src="../images/icon_facetalk_answer.png"></image>
+              </view>
+            </view>
+            <view class="dev">
+              <text>接听</text>
+            </view>
+          </view>
+        </view>
+        <view wx:else class="tool-btn">
+          <view class="tool-server">
+            <view class="server-content">
+              <view class="btn-server hang-up">
+                <image src="../images/icon_facetalk_hangup.png"></image>
+              </view>
+            </view>
+            <view class="dev">
+              <text>挂断</text>
+            </view>
+          </view>
+          <view class="tool-server">
+            <view class="server-content">
+              <view class="btn-server open-door">
+                <image src="../images/open_door.png"></image>
+              </view>
+            </view>
+            <view class="dev">
+              <text>开门</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

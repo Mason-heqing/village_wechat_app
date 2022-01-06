@@ -1,0 +1,38 @@
+<!--pages/notice/notice.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view  style='height:{{scrollHeight}}px;' hidden="{{showMessage}}">
+      <view class="notice">
+        <view class="notice-model" wx:for="{{notice}}"  wx:key="*this" data-noticeTitle="{{item.noticeTitle}}" data-createTime="{{item.createTime}}" data-content="{{item.content}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="details">
+          <view class="notice-img">
+            <image src="{{item.noticeImage}}"></image>
+          </view>
+          <view hidden="{{item.noticeInfo}}" class="message-info"></view>
+          <view class="notice-body" style='color:{{item.readStatus == "1"?"#888":"#333"}}'>
+            <view class="notice-content">
+              <!-- <text>{{item.noticeContent}}</text> -->
+              <!-- <rich-text style="" nodes="{{item.noticeContent}}"></rich-text> -->
+              <text>{{item.noticeTitle}}</text>
+            </view>
+            <view class="notice-title"><text>{{item.createTime}}</text></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="no-message" hidden="{{noMessage}}">
+       <view class="no-image">
+         <image src="../images/noMessage.png"></image>
+       </view>
+       <view class="no-content">
+         <text>暂无数据</text>
+       </view>
+       <!-- <view class="again-get">
+           <button bindtap="again">重试</button>
+       </view> -->
+    </view>
+    <view class="readBtn" animation="{{allReadAnimation}}" bindtap="allRead">
+       <image src="../images/read_icon.png"></image>
+       <text>全部已读</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,154 @@
+<!--pages/parkPayment/parkPayment.js.wxml-->
+<view class="page">
+  <view class="top_header" >
+    <view class="header_title">
+      {{hsNam}}
+    </view>
+  </view>
+
+<!-- 自定义弹窗 -->
+  <show-dlog showDlog="{{showDlogA}}" parkTimeA="{{parTime}}" parkFee="{{parkFee}}" numTg="{{numTg}}" bind:fatherMethod="fatherMethod"></show-dlog>
+
+  <!-- 车牌号码输入框 -->
+  <!-- bindtap='concealView' -->
+  <view class="wra_car" >
+  
+    <view class="car_cut" catchtap='switChover'>
+        切换车牌
+      </view>
+      <!-- 选择车牌弹窗 -->
+  
+        <view class="show_dlog" wx:if="{{tabNumberA }}">
+          <view class="show_dlog-item" catchtap='openIndex' data-item='{{item}}' wx:for="{{carNumberList}}" wx:key="index">
+            {{item.plateNo}}
+            <view class="border_1px"></view>
+          </view>
+          <view class="show_title" wx:if="{{showTi}}">
+            未查询到车牌信息，请先添加车牌号码
+          </view>
+          <image bindtap='concealView' class="x_btn" src="../images/close_icon.png">
+            
+          </image>
+      </view>
+
+      
+      <view class="card_input" wx:if="{{tabNumberB }}">
+        <input class="" value="{{vehicleNumber}}" auto-focus/>
+      </view>
+      
+      <view class="" >
+        
+      </view>
+      <view class="carNumber" wx:if="{{tabNumberC }}">
+        <view class="carNumber-items">
+          <view class="carNumber-items-box" bindtap='openKeyboard'>
+            <view class="carNumber-items-province carNumber-items-box-list">{{carnum[0] || ''}}</view>
+            <view class="carNumber-items-En carNumber-items-box-list">{{carnum[1] || ''}}</view>
+          </view>
+          <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[2] || ''}}</view>
+          <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[3] || ''}}</view>
+          <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[4] || ''}}</view>
+          <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[5] || ''}}</view>
+          <view class="carNumber-item" bindtap='openKeyboard'>{{carnum[6] || ''}}</view>
+          <view class="carNumber-item {{showNewPower ? '': 'carNumber-item-newpower'}}">
+            <view wx:if="{{!showNewPower}}" bindtap='showPowerBtn'>
+              <view class="carNumber-newpower-add">+</view>
+              <view>能源</view>
+            </view>
+            <view wx:if="{{showNewPower}}" bindtap='openKeyboard'>
+              {{carnum[7]}}
+            </view>
+          </view>
+        </view>
+    </view>
+    <view class="car_btn" catchtap='inquire'>
+      查询
+    </view>
+  </view>
+  <view class="card_titleBox" >
+    <view class="titleBox_nam" >
+        常用会员卡
+    </view>
+    <view class="skip_to" bindtap='cardList'>
+      <view class="skip_to-name" >
+        全部
+      </view>
+      <image src="../images/jiantou.png">
+      </image>
+    </view>
+  </view>
+  <!-- 卡片滑块 -->
+    <view class="swiper_wrapper">
+        <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{carNumberList}}" wx:key="item">
+            <swiper-item style="background:url('{{bgImgUrl}}') no-repeat; background-size:100% 100%;">
+              <view class="card_msgBox">
+                <view class="card_type" >{{item.cardTypeName}}</view>
+                <view class="card_content">
+                  <view class="content_left">
+                    <view class="">
+                      {{item.parkName}}
+                    </view>
+                    <view class="content_right">
+                      {{item.plateNo}}
+                    </view>
+                  </view>
+                  <view class="card_time" wx:if="{{ item.carTypeInfo == 1 && item.expireTime != null}}">
+                    {{item.expireTime}}
+                  </view>
+                  <view class="card_time" wx:if="{{item.carTypeInfo == 2}}">
+                    余额: ￥{{item.balance}}
+                  </view>
+                </view>
+                <view class="card_btn" >
+                  <button class="recharge_btn" style="width:610rpx" bindtap='valueCard' data-item = '{{item}}' wx:if="{{item.carTypeInfo == 2}}">充值</button>
+                  <button class="recharge_btn" style="width:610rpx" data-item='{{item}}' bindtap='recharging' wx:if="{{item.carTypeInfo == 1}}">续费</button>
+                </view>
+              </view>
+            
+            </swiper-item>
+          </block>
+          <swiper-item>
+          <view class="addCrad_box" >
+            <view class="addCrad_btn" bindtap='addMemberCrad'>
+              <image class="" src="../images/jia.png">
+                
+              </image>
+            </view>
+            <view class="addCrad_num" >
+              添加会员卡
+            </view>
+          </view>
+          </swiper-item>
+        
+        </swiper>
+    </view>
+  
+  
+  <!-- 虚拟键盘 -->
+  <view class="keyboard" hidden='{{!KeyboardState}}'>
+    <view class="keyboardClose">
+      <view class="keyboardClose_btn" bindtap='closeKeyboard'>关闭</view>
+    </view>
+    <!-- 省份简写键盘 -->
+    <view class="keyboard-item" hidden="{{carnum[0]}}">
+      <view class="keyboard-line" wx:for="{{provinces}}" wx:key="index">
+        <view class="keyboard-btn" wx:for="{{item}}" wx:key="index" data-val="{{itemlist}}" wx:for-item="itemlist" bindtap='bindChoose'>{{itemlist}}</view>
+      </view>
+      <view class="keyboard-del" bindtap='bindDelChoose'>
+        <text class="font_family icon-shanchu keyboard-del-font">删除</text>
+      </view>
+    </view>
+    <!-- 车牌号码选择键盘 -->
+    <view class="keyboard-item iscarnumber" hidden="{{!carnum[0]}}">
+      <view class="keyboard-line" wx:for="{{numbers}}" wx:key="index">
+        <view class="keyboard-btn" wx:for="{{item}}" wx:key="index" data-val="{{itemlist}}" wx:for-item="itemlist" bindtap='bindChoose'>{{itemlist}}</view>
+      </view>
+      <view class="keyboard-del" bindtap='bindDelChoose'>
+        <text class="font_family icon-shanchu keyboard-del-font">删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+

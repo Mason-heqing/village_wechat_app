@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的访客",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

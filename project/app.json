@@ -1,0 +1,88 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/firmShare/firmShare",
+    "pages/orderDetails/orderDetails",
+    "pages/againAppointment/againAppointment",
+    "pages/myVisitor/myVisitor",
+    "pages/makeVisitor/makeVisitor",
+    "pages/invitationVisitor/invitationVisitor",
+    "pages/visitorAuthorization/visitorAuthorization",
+    "pages/callOrder/callOrder",
+    "pages/decode/decode",
+    "pages/connecting/connecting",
+    "pages/intercomRecord/intercomRecord",
+    "pages/video/video",
+    "pages/roomChange/roomChange",
+    "pages/city/city",
+    "pages/login/login",
+    "pages/monitorDetails/monitorDetails",
+    "pages/longRange/longRange",
+    "pages/authorization/authorization",
+    "pages/bill/bill",
+    "pages/houseThrough/houseThrough",
+    "pages/reportList/reportList",
+    "pages/setTelephone/setTelephone",
+    "pages/setPassword/setPassword",
+    "pages/edit/edit",
+    "pages/selectVillage/selectVillage",
+    "pages/personal/personal",
+    "pages/passwordSet/passwordSet",
+    "pages/notice/notice",
+    "pages/selectBuilding/selectBuilding",
+    "pages/noticeDetails/noticeDetails",
+    "pages/repair/repair",
+    "pages/forgetPassword/forgetPassword",
+    "pages/administration/administration",
+    "pages/mySet/mySet",
+    "pages/reportDetails/reportDetails",
+    "pages/visitorPass/visitorPass",
+    "pages/contact/contact",
+    "pages/houseDetails/houseDetails",
+    "pages/addHouseHold/addHouseHold",
+    "pages/houseHold/houseHold",
+    "pages/monitor/monitor",
+    "pages/user/user",
+    "pages/parkPayment/parkPayment",
+    "pages/cardBag/cardBag",
+    "pages/renewMoney/renewMoney",
+    "pages/rechargeMsg/rechargeMsg",
+    "pages/userQrCode/userQrCode",
+    "pages/myVehicle/myVehicle",
+    "pages/webview/webview",
+    "pages/errorPage/errorPage",
+    "pages/successPage/successPage",
+    "component/showDlog/showDlog"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息用于快速录入检查地点"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#5656ED",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/pages/images/home_offline.png",
+        "selectedIconPath": "/pages/images/home_online.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/pages/images/user_offline.png",
+        "selectedIconPath": "/pages/images/user_online.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

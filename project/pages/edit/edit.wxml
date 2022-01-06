@@ -1,0 +1,130 @@
+<!--pages/edit/edit.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="edit">
+    <form bindsubmit="formSubmit">
+      <!-- <view class="title">
+        <text>前海湾</text>
+      </view> -->
+      <view class="edit-info">
+        <view class="list-item">
+          <view class="item-left">
+            楼栋 <text>*</text> 
+          </view>
+          <view class="item-right">
+            <view class="item-name" bindtap="selectBuilding">
+              <input name="houseId" hidden="true" value="{{form.houseId}}"></input>
+              <text class='{{isBuilding ?"":"grey"}}'>{{form.buildingName}} </text>
+              <image src="../images/arrow.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="item-left">
+            单元 <text>*</text> 
+          </view>
+          <view class="item-right">
+            <view class="item-name" bindtap="selectUnit">
+              <!-- <input name="unitName" hidden="true" value="{{form.unitName}}"></input> -->
+              <text class='{{isUnit ? "":"grey"}}'>{{form.unitName}} </text>
+              <image src="../images/arrow.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="item-left">
+            房号 <text>*</text> 
+          </view>
+          <view class="item-right">
+            <view class="item-name" bindtap="selectRoom">
+              <input name="houseId" hidden="true" value="{{form.houseId}}"></input>
+              <text class='{{isRoom ? "":"grey"}}'>{{form.roomName}} </text>
+              <image src="../images/arrow.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="item-left">
+            身份 <text>*</text> 
+          </view>
+          <view class="item-right">
+            <view class="item-name">
+              <picker bindchange="bindType" value="{{form.index}}" range="{{houseHoldType}}">
+                <input name="type" hidden='true' value="{{form.type}}" />
+                <text style="color:#999" wx:if="{{!personType}}">请选择身份</text>
+                <text wx:else>{{houseHoldType[form.index]}}</text>
+                <image class="right_img" src='../images/arrow.png'></image>
+              </picker>
+            </view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="item-left">
+            证件
+            <text wx:if="{{isRealName}}">*</text>
+            <text wx:else></text> 
+          </view>
+          <view class="item-right">
+            <view class="item-name">
+              <input type="type" maxlength='18' value="{{certificate}}" bindinput="getNum" placeholder="请输入证件号" style="color:#999;text-align:right;font-size:32rpx"/>
+            </view>
+          </view>
+        </view>
+        <view class="list-item">
+          <view class="item-left">
+            有效期 <text>*</text> 
+          </view>
+          <view class="item-right">
+            <view class="item-name">
+              <picker bindchange="bindMultiPickerChange" 
+           value="{{indexTime}}" range="{{effectiveTime}}" range-key="name" disabled="{{isDisabled}}">
+            <input name="houseId" hidden='true' value="{{form.houseId}}" />
+            <input name="date" hidden='true' value="{{form.date}}" />
+            <text wx:if="{{!isEffectiveTime}}" style="color:#999">请选择有效期限</text>
+            <text wx:else>{{effectiveTime[indexTime].name}}</text>
+            <image class="right_img" src='../images/arrow.png'></image>
+          </picker>
+              <!-- <picker bindchange="bindMultiPickerChange"  mode="date"  value="{{form.date}}" start="{{date}}" >
+                <input name="date" hidden='true' value="{{form.date}}" />
+                <text style="color:{{timesColor}}">{{form.showDate}} </text>
+                <image class="right_img" src='../images/arrow.png'></image>
+              </picker> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="enclosure">
+        <view class="enclosure-title">附件
+          <text>（支持png、jpg、jpeg格式最多支持6张）</text>
+        </view>
+        <view class="file">
+          <view class="file-content">
+            <view class="repair-file" wx:for="{{showImg}}" wx:key="*this">
+              <view class="file-show">
+                <image src="{{item}}"></image>
+              </view>
+              <view class="file-close" data-index="{{index}}" bindtap="close">
+                <image src="../images/close.png"></image>
+              </view>
+            </view>
+            <view class="uploadFile" bindtap="chooseImage" hidden="{{addFile}}">
+              <!-- <input name="repairImage" value="{{form.repairImage}}" hidden="true"></input> -->
+              <view class="add-file">
+                <image src="{{repairImage}}"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="tips">
+        <image src="../images/tips.png"></image>
+        <text>{{message}}</text>
+      </view>
+      <view class="enclosure-btn">
+        <button wx:if="{{isBuilding && isUnit && isRoom && personType && isTimes && isCertificate}}"  class="nodisabled" form-type="submit">确定</button>
+        <button wx:else  class="disabled" disabled="true" form-type="submit">确定</button>
+      </view>
+      </form>
+    </view>
+  </view>
+</view>

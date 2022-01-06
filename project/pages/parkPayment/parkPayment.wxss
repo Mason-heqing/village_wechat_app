@@ -1,0 +1,510 @@
+/* pages/parkPayment/parkPayment.js.wxss */
+.page{
+  background: #F6F6F6;
+  position: absolute;
+  top:0;
+  bottom:0;
+  width: 100%;
+}
+.top_header {
+  position: relative;
+  width: 100%;
+  height: 345rpx;
+  background: #5656ED;
+  border-radius: 100% 100% 100% 100% / 0% 0% 20% 20%;
+}
+.header_title {
+  position: absolute;
+  top: 64rpx;
+  left: 30rpx;
+  height: 48rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-family: Microsoft YaHei;
+  opacity: 1;
+}
+/* 自定义弹窗样式 */
+.dalog_box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 570rpx;
+  height: 355rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+}
+.show_title {
+  font-size: 26rpx;
+  color: #5656ed;
+}
+.x_btn {
+  position: absolute;
+  top: 6rpx;
+  right: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.dalog_box-content {
+  height: 100rpx;
+  padding: 0 47rpx;
+}
+.dalog_box-title {
+  width: 216rpx;
+  height: 50rpx;
+  margin: 30rpx 47rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 50rpx;
+  color: #111111;
+  opacity: 1;
+}
+.content_a {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  margin-bottom: 5rpx;
+  color: #999999;
+  opacity: 1;
+  line-height: 40rpx;
+  height: 40rpx;
+
+}
+.content_b {
+  height: 40rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  color: #999999;
+  opacity: 1;
+}
+.content_c {
+  height: 84rpx;
+  font-size: 30rpx;
+  font-family:PingFang SC;
+  font-weight: 400;
+  text-align: center;
+  margin: 108rpx auto;
+  color: #111111;
+
+  opacity: 1;
+}
+._px {
+  width: 100%;
+  height: 1px;
+  margin-top: 30rpx;
+  background: #CCCCCC;
+}
+.dalog_box-btn {
+  display: flex;
+  height: 110rpx;
+  
+}
+.btn_cancel {
+  width: 50%;
+  height: 100%;
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  text-align: center;
+  line-height: 110rpx;
+  color: #666666;
+  opacity: 1;
+}
+.btn_confirm {
+  width: 50%;
+  height: 100%;
+  font-size: 36rpx;
+  text-align: center;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 110rpx;
+  color: #5656ED;
+  opacity: 1;
+}
+.wra_car {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700rpx;
+  height: 390rpx;
+  box-shadow: 0px 3px 12px rgba(117, 117, 117, 0.16);
+  border-radius: 10rpx;
+  opacity: 1;
+  background: #fff;
+}
+.car_cut {
+  width: 132rpx;
+  height: 35rpx;
+  text-align: center;
+  transform: translateX(540rpx);
+  font-size: 26rpx;
+  font-family: Microsoft YaHei;
+  line-height: 35rpx;
+  opacity: 1;
+  z-index: -666;
+  
+  margin: 26rpx 0 45rpx 0;
+  color: #5656ED;
+}
+.car_btn {
+  position: absolute;
+  bottom: 15rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #5656ED;
+  width: 50%;
+  text-align: center;
+  height: 80rpx;
+  font-size: 34rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  line-height: 80rpx;
+  opacity: 1;
+
+}
+.weui-cells__title{
+margin-top:.77em;
+margin-bottom:.3em;
+padding-left:15px;
+padding-right:15px;
+color:#999;
+font-size:14px;
+
+}
+.card_input {
+  width: 380rpx;
+  height: 45rpx;
+  padding: 10rpx 0;
+  border-radius: 5rpx;
+  margin: 0 auto;
+  border: 1rpx solid #d9d9d9;
+  
+}
+/* 选择车牌弹窗 */
+
+.show_dlog {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 18rpx;
+  background: #F2F2F2;
+  border-radius: 5rpx;
+  /* border: 1rpx solid #ADA996; */
+  z-index: 9999;
+  /* opacity: 0.5; */
+  box-shadow: 0px 3px 12px rgba(117, 117, 117, 0.16);
+  width: 100%;
+  height: 250rpx;
+}
+.show_dlog-item {
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-bottom: 30rpx;
+  letter-spacing:17rpx;
+  color: #5656ed;
+  font-size: 35rpx;
+
+}
+.border_1px {
+  margin: 14rpx auto;
+  width: 350rpx;
+  height: 1px;
+  background: #ccc;
+}
+.card_titleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 690rpx;
+  margin: 200rpx auto;
+  height: 50rpx;
+
+}
+.titleBox_nam {
+  font-size: 38rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  
+  color: #111111;
+  opacity: 1;
+
+}
+.skip_to {
+  align-items: center;
+  display: flex;
+}
+.skip_to-name {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+
+  color: #999999;
+  opacity: 1;
+
+}
+.skip_to image {
+  width: 52rpx;
+  height: 52rpx;
+}
+/* 卡片滑块 */
+.swiper_wrapper {
+  width: 690rpx;
+  margin: -100rpx auto;
+  transform: translateY(-70rpx);
+}
+.swiper_wrapper swiper {
+  height: 390rpx;
+  border-radius: 10rpx;
+  margin-bottom: 5rpx;
+  box-shadow: 0px 3px 30px rgba(64, 64, 64, 0.3);
+}
+swiper-item {
+  display: block;
+  height: 390rpx;
+  border-radius: 10rpx;
+
+}
+/* 卡片样式区 */
+.card_msgBox {
+  width: 690rpx;
+  height: 330rpx;
+  margin: 10rpx auto;
+}
+.card_content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 41rpx;
+  margin-bottom: 45rpx;
+
+}
+.content_left {
+  margin-left: 33rpx;
+}
+.content_left view:nth-of-type(1) {
+  height: 50rpx;
+  font-size: 35rpx;
+  font-family: PingFang SC;
+  overflow: hidden;
+  font-weight: 400;
+  line-height: 50rpx;
+  color: #FFE5B8;
+  opacity: 1;
+}
+.content_left view:nth-of-type(2) {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  margin-top: 18rpx;
+  color: #FFE5B8;
+  opacity: 1;
+} 
+.card_time {
+  height: 40rpx;
+  font-size: 28rpx;
+  margin-top: 68rpx;
+  margin-right: 33rpx;
+  text-align:center;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  color: #FFE5B8;
+  opacity: 1;
+}
+
+.recharge_btn {
+  color: #474747;
+  background:#E8CB9A;
+
+}
+.card_type {
+  height: 37rpx;
+  margin-top: 25rpx;
+  margin-left: 32rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  line-height: 37rpx;
+  color: #AE9781;
+  opacity: 1;
+}
+.addCrad_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 690rpx;
+  height: 390rpx;
+}
+.addCrad_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70rpx;
+  height: 70rpx;
+  background: #5656ED;
+  border-radius: 50rpx;
+}
+.addCrad_btn image {
+  width: 56rpx;
+  height: 56rpx;
+}
+.addCrad_num {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #111111;
+  opacity: 1;
+  margin-top: 30rpx;
+}
+
+
+/* 自定义弹窗 */
+.show_dalog {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* 虚拟键盘 */
+.keyboard{
+  height: auto;
+  background: #d1d5d9;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  left:0;
+}
+.keyboard-item{
+  padding:10rpx 0 5rpx 0;
+  position: relative;
+  display: block;
+}
+/* 关闭虚拟键盘 */
+.keyboardClose{
+  height: 70rpx;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+.keyboardClose_btn{
+  float: right;
+  line-height: 70rpx;
+  font-size: 15px;
+  padding-right: 30rpx;
+}
+/* 虚拟键盘-省缩写 */
+
+/* 虚拟键盘-行 */
+.keyboard-line{
+  margin:0 auto;
+  text-align: center;
+}
+.iscarnumber .keyboard-line{
+  text-align: left;
+  margin-left: 5rpx;
+}
+/* 虚拟键盘-单个按钮 */
+.keyboard-btn{
+  font-size: 17px;
+  color: #333333;
+  background: #fff;
+  display: inline-block;
+  padding:20rpx 0; 
+  width: 63rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 0 0 #999999;
+  border-radius: 10rpx;
+  margin:5rpx 6rpx;
+}
+/* 虚拟键盘-删除按钮 */
+.keyboard-del{
+  font-size: 17px;
+  color: #333333;
+  background: #A7B0BC;
+  display: inline-block;
+  padding:4rpx 55rpx;
+  box-shadow: 0 2rpx 0 0 #999999;
+  border-radius: 10rpx;
+  margin:5rpx 20rpx;
+  position: absolute;
+  bottom:5rpx;
+  right: 6rpx;
+}
+.keyboard-del-font{
+  font-size:25rpx;
+  line-height: 70rpx;
+}
+
+/* 车牌号码 */
+.carNumber-items{
+  text-align: center;
+}
+
+.carNumber-items-box{
+  width: 150rpx;
+  height: 86rpx;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 30rpx;
+}
+.carNumber-items-box-list{
+  width: 62rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+
+ 
+  vertical-align: middle;
+}
+.carNumber-items-province{
+  border-right: 1rpx solid #ccc;
+}
+.carNumber-items-box::after{
+  content: "";
+  width: 6rpx;
+  height: 6rpx;
+  position: absolute;
+  right: -22rpx;
+  top: 40rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+.carNumber-item{
+  width: 62rpx;
+  height: 86rpx;
+  font-size: 18px;
+  text-align: center;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  line-height: 90rpx;
+  display: inline-block;
+  margin:0 4rpx;
+  vertical-align: middle;
+}
+/* 新能源 */
+.carNumber-item-newpower{
+  width: 62rpx;
+  border: 2rpx dashed #A8BFF3;
+  background-color: #F6F9FF;
+  color: #A8BFF3;
+  font-size: 12px;
+  line-height: 45rpx;
+}
+.carNumber-newpower-add{
+  font-size: 18px;
+}

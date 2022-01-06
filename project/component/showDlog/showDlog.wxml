@@ -1,0 +1,47 @@
+<!--component/showDlog/showDlog.wxml-->
+<!-- 查询弹窗组件 -->
+    <view class="show_dalog" wx:if="{{showDlog}}">
+      <view class="dalog_img-box {{numTg != 3 ? 'activeA' : ''}}" style="background:url('{{numTg == 0 ? url3 :numTg == 1 ? url4 :numTg == 2 ? url1 : url2 }}') no-repeat; background-size:100% 100%;">
+        <view class="wrapper {{numTg != 3 ? 'active' :''}}">
+          <view class="content_box">
+            <view class="content_title" wx:if="{{numTg == 0}}">
+              服务器异常，稍后查询
+            </view>
+            <view class="content_title" wx:if="{{numTg == 1}}">
+              未查询到该车辆
+            </view>
+            <view class="content_title " wx:if="{{numTg == 2}}">
+              无须缴费
+            </view>
+            <view class="content_title " wx:if="{{numTg == 3}}">
+              临时停车缴费
+            </view>
+            <view class="content" wx:if="{{numTg == 3}}">
+              <view class="">
+                1.停车时长：{{parkTimeA}}
+              </view>
+              <view class="" style="margin-top:5rpx">
+                2.停车缴费：￥{{parkFee}}
+              </view>
+            </view>
+          </view>
+          <view class="btn_box" wx:if="{{numTg == 3}}">
+            <view class="clos_btn" bindtap='closeShowDlog'>
+              取消
+            </view>
+            <view class="pay_btn" bindtap='childMethod'>
+              付款
+            </view>
+          </view>
+          <view class="btn_box " wx:if="{{numTg != 3}}" bindtap='closeShowDlog'>
+            <view class="pay_btn">
+              确定
+            </view>
+          </view>
+        </view>
+        <image class="gb" src="../../pages/images/x.png" bindtap='closeShowDlog'>
+          
+        </image>
+        
+      </view>
+    </view>

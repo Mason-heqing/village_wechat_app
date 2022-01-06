@@ -1,0 +1,11 @@
+<!--pages/success/success.wxml-->
+<view class="">
+  <view class="su_wrapper">
+    <image class="" src="../../pages/images/chenggong.png" >
+      
+    </image>
+    <view class="bottom_pay">
+      <button bindtap='toSuccessPage'>支付成功</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "门前监视",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

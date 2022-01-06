@@ -1,0 +1,78 @@
+<!--pages/orderDetails/orderDetails.wxml-->
+<view class="container">
+  <view class="page-section">
+        <view class="visitor-pass">
+            <view class="visitor-header" hidden="{{isFaceImg}}">
+              <view class="person-face">
+                   <image wx:if="{{''!=faceUrl}}" src="{{faceUrl}}"></image> 
+                   <image wx:else src="../images/faceImgDefault.png"></image> 
+              </view>
+              <view class="face-bg" wx:if="{{1=== status}}">
+              </view>
+              <view class="face-bg" wx:elif="{{2=== status || 3=== status}}">
+                <image src="../images/iconreviewed_.png"></image>
+              </view>
+              <view class="face-bg" wx:else>
+                <image src="../images/cancel_icon.png"></image>
+              </view>
+            </view>
+            <view class="visitor-body">
+                <view class="visitor-info">
+                    <view class="list-item">
+                       <view class="faceImg newClass">
+                         <image src="../images/name_icon.png"></image>
+                         <text class="open">访客姓名</text>
+                       </view>
+                       <view class="content">
+                          <text>{{name}}</text>
+                       </view>
+                    </view>
+                    <view class="list-item">
+                       <view class="faceImg newClass">
+                         <image src="../images/mobilephone.png"></image>
+                         <text class="open">手机号码</text>
+                       </view>
+                       <view class="content">
+                          <text>{{phone}}</text>
+                       </view>
+                    </view>
+                    <view class="list-item">
+                       <view class="faceImg adress-visitor">
+                         <image src="../images/toadress.png"></image>
+                         <text class="open">到访地址</text>
+                       </view>
+                       <view class="content" style="width:70%;text-align:right;">
+                          <text>{{address}}</text>
+                       </view>
+                    </view>
+                    <view class="list-item">
+                       <view class="faceImg newClass">
+                         <image src="../images/unlock.png"></image>
+                         <text class="open">开门密码</text>
+                         <text class="password">(密码用于开门,当天有效)</text>
+                       </view>
+                       <view class="content">
+                          <text>{{doorPassword}}</text>
+                       </view>
+                    </view>
+                    <view class="list-item">
+                       <view class="faceImg newClass">
+                         <image src="../images/date.png"></image>
+                         <text class="open">到访日期</text>
+                       </view>
+                       <view class="content">
+                          <text>{{visitDate}}</text>
+                       </view>
+                    </view>
+                </view>
+                <!-- <view class="tool-btn"   wx:if="{{1=== status }}">
+                  <button data-url="visit/cancel" bindtap="authorization">取消预约</button>
+                </view>
+                <view class="tool-btn" wx:else>
+                  <button data-url="visit/againPassport" bindtap="again">再次授权</button>
+                </view> -->
+            </view>
+        </view>
+  </view>
+</view>
+

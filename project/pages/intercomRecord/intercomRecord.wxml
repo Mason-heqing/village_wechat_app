@@ -1,0 +1,27 @@
+<!--pages/intercomRecord/intercomRecord.wxml-->
+<view class="container">
+  <view class="page-section">
+   <view class="intercom">
+     <view>
+       <view class="intercom-list" wx:for="{{list}}" wx:key="*this" >
+          <view class="intercom-left">
+            <view class="face-img">
+              <image src="{{item.faceImg}}"></image>
+            </view>
+            <view class="intercom-info">
+              <view class="village-name">
+                <text>{{item.adress}}</text>
+              </view>
+              <view class="times">
+                <text>{{item.times}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="intercom-right">
+            {{item.status}}
+          </view> 
+       </view>
+     </view>
+   </view>
+  </view>
+</view>

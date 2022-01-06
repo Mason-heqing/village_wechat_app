@@ -1,0 +1,271 @@
+/* pages/houseHold/houseHold.wxss */
+.containers{
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  background: rgb(242,242,242);
+
+}
+.house-header{
+  padding:15rpx;
+  /* background: #fff; */
+}
+.house-header-content{
+  position: relative;
+  height: 310rpx;
+  padding: 20rpx;
+  /* border:1rpx dashed #ccc; */
+}
+.header-bgColor{
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350rpx;
+}
+.header-bgColor>image{
+  width: 100%;
+  height: 100%;
+}
+.header-info{
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350rpx;
+}
+.info-padding{
+  padding: 30rpx;
+  color: #fff;
+}
+.house-village>image,.tool-model>image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.house-village{
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.house-village text{
+  padding-left: 10rpx;
+  font-size: 32rpx;
+}
+.house-unit{
+  padding: 50rpx 0;
+  text-align: center;
+  font-size: 56rpx;
+}
+.house-tool{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+}
+.tool-model{
+  display: flex;
+align-items: center;
+justify-content: center;
+flex-grow: 1;
+text-align: center;
+vertical-align: middle;
+}
+.tool-model text{
+  padding: 10rpx;
+}
+.house-body{
+  padding:30rpx 30rpx 0 30rpx;
+}
+.list{
+  position:relative;
+  padding: 30rpx;
+  height: 120rpx;
+  background: #fff;
+  margin-bottom: 30rpx;
+  border-radius: 20rpx;
+}
+.list-bg{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:180rpx;
+}
+.list-info{
+  position: absolute;
+  z-index:2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:180rpx;
+}
+.list-bg>image{
+ width: 100%;
+ height: 100%;
+}
+.list-model{
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: nowrap;
+  height: 100%;
+  padding:0 30rpx;
+}
+.person-face,.house-type,.info-details{
+  height: 180rpx;
+}
+.person-face,.house-type{
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.person-face{
+  padding-left:24rpx;
+}
+.person-face text{
+  padding-left: 30rpx;
+} 
+.person-face>image{
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 50%;
+}
+.house-type{
+  flex-direction: row-reverse;
+  padding-right: 30rpx;
+}
+.house-type text{
+  padding: 10rpx 36rpx;
+  /* background: red; */
+  color: #fff;
+  border-radius: 50rpx;
+  font-size: 24rpx;
+}
+.info-details{ 
+ display: flex;
+ align-items: center;
+}
+.info-details>image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.khaki{
+  background:#5656ED;
+}
+.green{
+  background: #76C945;
+}
+.blue{
+  background: #FF8B33;
+}
+.violet{
+  background: #7442EC;
+}
+.modal-content{
+  text-align: center;
+}
+.modal-title{
+  padding: 40rpx 0;
+  font-weight: hold;
+  font-size: 36rpx;
+  border-bottom:1rpx solid #ccc;
+}
+
+.model-body{
+  padding: 20rpx 0;
+}
+.content-name{
+  display: block;
+  padding-bottom: 20rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+.model-content{
+  padding:38rpx 0;
+}
+.model-content text:nth-child(2){
+  font-size: 28rpx;
+  color: #5656ED;
+}
+.model-body button{
+   margin: 20rpx 0 10rpx 0;
+   width: 60% !important;
+   font-size:28rpx;
+   color:#fff;
+}
+.model-content>image{
+  position: relative;
+  top: 8rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.content-phone{
+  padding-left: 10rpx;
+  color: #5656ED;
+  /* font-size: 28rpx; */
+}
+
+
+ /* 开门密码样式 */
+
+.mask{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.modal-content{
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  /* height: 80%; */
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.main-content{
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden; 
+}
+.modal-btn-close{
+  position: absolute;
+  z-index: 999;
+  right:0rpx;
+  top:0rpx;
+  width: 60rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  /* background: red; */
+  vertical-align: center;
+  text-align: center;
+}
+.modal-btn-close>image{
+    width:40rpx;
+    height: 40rpx;
+}
+.changePassword{
+  position: absolute;
+  left: 0;
+  bottom:50rpx;
+  width: 100%;
+  
+}
+.changePassword>button{
+   width: 60% !important;
+   padding: 12px 24px;
+   font-size:28rpx;
+   color:#fff;
+   background:#5656ED
+}

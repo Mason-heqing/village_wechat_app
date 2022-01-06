@@ -1,0 +1,115 @@
+/* pages/notice/notice.wxss */
+.container{
+  padding: 0;
+  background: #f6f6f6;
+}
+.notice{
+  padding: 0 30rpx;
+  background: #fff;
+}
+.notice-model{
+  position: relative;
+  display: flex;
+  flex-direction:row;
+  padding: 20rpx 0;
+  border-bottom:1rpx solid #eee;
+}
+.notice-model:last-child{
+  border-bottom:none;
+}
+.notice-img>image{
+ width: 140rpx;
+ height: 140rpx;
+ border-radius: 12rpx;
+}
+.notice-body{
+  position: relative;
+  padding-left:36rpx;
+  flex-grow: 2
+}
+.notice-title{
+  /* font-weight: bold; */
+  position: absolute;
+  bottom:12rpx;
+  font-size: 24rpx;
+}
+.message-info{
+  position: absolute;
+  top:52rpx;
+  left:132rpx;
+  width: 12rpx;
+  height: 12rpx;
+  background-color:red;
+  border: 2rpx;
+  border-radius: 50%; 
+  /* vertical-align: middle; */
+  margin-top: -30rpx;
+  margin-left:10rpx;
+}
+.notice-content{
+  padding-top: 12rpx;
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.notice-content text{
+  word-break:break-all;
+display: -webkit-box;
+overflow: hidden;
+text-overflow: ellipsis;
+word-wrap: break-word;
+white-space: normal !important;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}
+.no-message{
+  /* padding-top: 190rpx; */
+  position: absolute;
+  left: 50%;
+  margin-left: -190rpx;
+  top:190rpx;
+
+}
+.no-image{
+  text-align: center;
+}
+.no-image>image{
+  width: 380rpx;
+  height: 358rpx;
+}
+.no-content{
+  margin: 50rpx 0 150rpx 0;
+  text-align: center;
+  color: #666;
+}
+.again-get>button{
+  height: 88rpx;
+  line-height: 2;
+  font-weight: 100;
+  color: #fff;
+  background: #5656ED;
+}
+.readBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 0;
+  bottom: 100rpx;
+  width:144rpx;
+  height:46rpx;
+  background:rgba(86,86,237,1);
+  box-shadow:0px 12px 12px rgba(86,86,237,0.24);
+  opacity:1;
+  border-radius:26px 0px 0px 26px;
+}
+.readBtn text{
+  padding-left:6rpx; 
+  font-size: 22rpx;
+  opacity: 0.6;
+  color: #fff;
+}
+.readBtn>image{
+  width: 23rpx;
+  height: 23rpx;
+}

@@ -1,0 +1,38 @@
+/* pages/visitorAuthorization/visitorAuthorization.wxss */
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: #f6f6f6;
+}
+.visitor-pages{
+  padding: 50rpx;
+}
+.title{
+  font-size: 46rpx;
+  color: #333;
+}
+.list-btn{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding:50rpx 0rpx;
+  background-color: rgb(95, 95, 207); 
+  border-radius: 30rpx;
+  margin: 50rpx 0;
+}
+.list-btn:last-child{
+  background-color: rgb(33, 191, 22); 
+}
+.list-btn>image{
+  width: 64rpx;
+  height: 64rpx;
+  padding-right: 20rpx;
+}
+.list-btn text{
+  font-size:46rpx;
+  color: #fff;
+}

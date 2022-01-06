@@ -1,0 +1,105 @@
+<!--pages/houseDetails/houseDetails.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="details-header" hidden="{{showStatus}}">
+      <view class="person-face">
+        <image src="{{faceImg}}"></image>
+      </view>
+      <view  class="flag">
+        <image wx:if="{{5 == bindStatus}}" src="../images/person_no_reviewed.png"></image> 
+        <image wx:elif="{{0 == bindStatus || 1 == bindStatus}}" src="../images/person_no_property.png"></image>
+        <image wx:elif="{{2 == bindStatus || 4 == bindStatus}}" src="../images/person_failed.png"></image>  
+      </view>
+    </view>
+    <view class="details-body">
+     <view class="details-list">
+       <view class="name">
+         <image src="../images/name_icon.png"></image>
+         <text>真实姓名</text>
+       </view>
+       <view class="content">
+        <text>{{name}}</text>
+       </view>
+     </view>
+     <view class="details-list" hidden="{{showStatus}}">
+       <view class="name">
+         <image src="../images/idNo_icon.png"></image>
+         <text>身份证号</text>
+       </view>
+       <view class="content">
+        <text>{{idNo}}</text>
+       </view>
+     </view>
+     <view class="details-list">
+       <view class="name">
+         <image src="../images/moilephone_icon.png"></image>
+         <text>手机号码</text>
+       </view>
+       <view class="content">
+        <text>{{phone}}</text>
+       </view>
+     </view>
+     <view class="details-list">
+       <view class="name">
+         <image src="../images/houseType_icon.png"></image>
+         <text>住户类型</text>
+       </view>
+       <view class="content">
+        <text>{{houseType}}</text>
+       </view>
+     </view>
+     <view class="details-list">
+       <view class="name">
+         <image src="../images/date_icon.png"></image>
+         <text>有效期限</text>
+       </view>
+       <view class="content">
+        <text>{{date}}</text>
+       </view>
+     </view>
+     <view class="details-list">
+       <view class="name">
+         <image src="../images/idNo_icon.png"></image>
+         <text>IC卡号</text>
+       </view>
+       <view class="content">
+        <text>{{icNum}}</text>
+       </view>
+     </view>
+    </view>
+    <view style="width:100%;height:60rpx;border-top:1rpx solid #eee;background-color: #eee;"></view>
+    <view class="edit" wx:if="{{5 == bindStatus}}">
+       <view class="reject">
+          <button bindtap="reject">拒绝</button>
+       </view>
+       <view class="ok">
+          <button bindtap="ok">同意</button>
+       </view>
+    </view>
+    <view class="property-btn" wx:elif="{{0 ==bindStatus || 1 == bindStatus}}">
+       <button bindtap="cancel">取消申请</button>
+    </view>
+    <view class="property-btn" wx:if="{{(9 ==bindStatus && 1 != personSubtype) || (2 ==bindStatus || 4 == bindStatus)}}">
+       <button bindtap="deletes">删除该用户</button>
+    </view>
+    <view style="width:100%;height:60rpx;border-top:1rpx solid #eee;background-color: #eee;"></view>
+  </view>
+</view>
+<modal show="{{openDoorMessage}}" height='24%' width='80%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
+   <view class='modal-content'>
+        <!-- <view class="modal-title"><text>提示信息</text></view> -->
+        <view class="model-body">
+         <view class="model-content">
+           <!-- <text>您未填写个人信息是否现在去填写</text> -->
+           <view class="edit-icon" style="width:{{editWidth}}%" hidden="{{editIcon}}">
+             <image src="../images/edit_icon.png"></image>
+           </view>
+           <view class="textareaContent" style="width:{{textareaWidth}}%">
+             <textarea bindfocus="bindTextAreaFocus" value="" placeholder="请输入拒绝原因" placeholder-style="color:#999;"  />
+           </view>
+         </view>
+        </view>
+   </view>
+</modal>
+
+

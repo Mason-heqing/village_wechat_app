@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view wx:if="{{isLogin}}" class="select-adress"  bindtap="roomChange">
+        <view class="adress-content">
+          <image class="location" src="../images/adress.png"></image>
+          <!-- <text>{{adress[index].appName}}{{adress[index].houseAddress}}</text> -->
+          <text>{{villageName}}</text>
+          <image class="triangle" src="../images/triangle.png"></image>
+        </view>
+      </view>
+      <view wx:else class="select-adress noAddress" bindtap="selectAdress">
+        <image class="location" src="../images/adress.png"></image>
+        <text class="select-text">请选择</text>
+      </view>
+    </view>
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActivecolor}}"      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{bannerImg}}" wx:key="index">
+          <swiper-item>
+            <view class="swiper-item">
+              <image src="{{item}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- <view class="page-section lampshade"></view>
+    <view class="page-section progress" style="width:{{progressWidth}};"></view> -->
+    <view class="page-section">
+      <view class="notice">
+        <view class="notice-header">
+          <view class="notice-title">
+            <image src="../images/notice.png"></image>
+            <text>物业通知</text>
+            <view hidden="{{noticeInfo}}" class="message-info"></view>
+          </view>
+          <view class="notice-more" bindtap="more">
+            <text>查看更多</text>
+            <image src="../images/arrow.png"></image>
+          </view>
+        </view>
+        <view class="notice-body" hidden="{{noticeInfo}}">
+          <view class="currentText" hidden="{{currentText}}">
+            <text>{{noticeContent}}</text>
+          </view>
+          <view class="noContent" hidden="{{noContent}}">
+            <image src="../images/emport.png"></image>
+            <text>暂无通知</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="tool">
+        <view class="tool-model" wx:for="{{tool}}" wx:key="index" wx:if="{{item.jurisdiction}}">
+          <view bindtap="{{item.events}}">
+            <view class="model-img">
+              <image src="{{item.toolIcon}}"></image>
+            </view>
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<modal show="{{openDoorMessage}}" height='24%' width='80%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
+  <view class='modal-content'>
+    <view class="modal-title">
+      <text>提示信息</text>
+    </view>
+    <view class="model-body">
+      <view class="model-content">
+        <text>您未绑定房屋是否现在去申请房屋</text>
+      </view>
+    </view>
+  </view>
+</modal>

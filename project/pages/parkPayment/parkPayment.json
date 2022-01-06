@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#5656ed" ,
+  "navigationBarTextStyle":"white",
+  "navigationBarTitleText": "停车缴费",
+  "usingComponents": {
+    "show-dlog":"/component/showDlog/showDlog"
+  }
+  
+}

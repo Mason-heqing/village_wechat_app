@@ -1,0 +1,90 @@
+/* pages/myVehicle/myVehicle.wxss */
+page {
+  position: relative;
+  background: #FFFFFF;
+}
+.no-image{
+  margin-top: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 380rpx;
+  height: 358rpx;
+}
+.no-image image {
+  width: 100%;
+  height: 100%;
+}
+.no-text {
+  margin: 0 auto;
+  text-align: center;
+  color: #666;
+}
+.car_wrapper {
+  position: relative;
+  display: flex;
+  margin: 25rpx auto; 
+  border-radius: 10rpx;
+  box-shadow: 0px 3px 30px rgba(64, 64, 64, 0.3);
+  width: 690rpx;
+  height: 210rpx;
+}
+.car_msgBox {
+  width: 585rpx;
+  padding: 22rpx 25rpx;
+}
+.wrapper_left {
+  width: 105rpx;
+  height: 210rpx;
+  line-height: 210rpx;
+  text-align: center;
+  border-right: 1rpx solid #E4E4E4;
+}
+.car_title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 53rpx;
+
+}
+.title_numb {
+  font-size: 35rpx;
+  font-weight: 600;
+}
+.car_type {
+font-size: 26rpx;
+}
+.add_news {
+  position: fixed;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #5656ED;
+  color: #FFFFFF;
+}
+.car_img {
+  display: flex;
+  align-items: center;
+
+}
+.car_img image {
+  width: 67rpx;
+  height: 67rpx;
+}
+.car_img {
+  display: flex;
+}
+.car_name {
+  margin-left: 75rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #888888;
+  opacity: 1;
+  font-size: 26rpx;
+}
+.delete_item {
+  position: absolute;
+  right: 25rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45rpx;
+  height: 45rpx;
+}

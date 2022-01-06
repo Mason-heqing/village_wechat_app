@@ -1,0 +1,97 @@
+/* pages/contact/contact.wxss */
+.container{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: rgb(242, 242, 242)
+}
+.contact{
+  padding:30rpx 12rpx;
+}
+.contact-modal{
+  position: relative;
+  width: 100%;
+  height: 246rpx;
+}
+.item-content{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  /* width: 100%;
+  height: 100%; */
+  padding:65rpx;
+  /* border:1rpx solid #ccc; */
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+.content,.call{
+  flex-grow: 1;
+}
+.content .name{
+  padding-bottom: 24rpx;
+  font-size: 36rpx;
+  color: #fff;
+}
+.content .phone{
+  padding-top: 10rpx;
+  font-size: 32rpx;
+  color: #fff;
+  opacity: 0.5;
+}
+.call{
+  margin-top: 10rpx;
+  text-align: right;
+}
+.person-face>image{
+  width: 110rpx;
+  height: 110rpx;
+}
+.call>image{
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.list-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+}
+.list-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+}
+.list-bg>image{
+  width: 100%;
+  height: 246rpx;
+}
+.no-message{
+  padding-top: 190rpx;
+}
+.no-image{
+  text-align: center;
+}
+.no-image>image{
+  width: 380rpx;
+  height: 358rpx;
+}
+.no-content{
+  margin: 50rpx 0 150rpx 0;
+  text-align: center;
+  color: #666;
+}
+.again-get>button{
+  height: 88rpx;
+  line-height: 2;
+  /* font-weight: 100; */
+  color: #fff;
+  background: #5656ED;
+}

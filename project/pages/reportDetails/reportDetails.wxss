@@ -1,0 +1,53 @@
+/* pages/reportDetails/reportDetails.wxss */
+.container{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: rgb(242, 242,242);
+}
+.word-title{
+  padding: 30rpx 30rpx 10rpx 30rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  text-align: center;
+}
+.date{
+  padding:0 30rpx 30rpx 30rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+.word{
+  padding:0 60rpx 30rpx 60rpx;
+  font-size: 28rpx;
+  color: #888;
+}
+.img{
+  display: flex;
+  flex-wrap:wrap;
+  padding:30rpx 10rpx;
+}
+.thingPic{
+  width: 33.3333%;
+  text-align: center;
+}
+.thingPic>image{
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 30rpx;
+}
+.other{
+  padding: 0 52rpx 30rpx 52rpx;
+}
+.ohter-title{
+  padding-bottom: 10rpx;
+}
+.other-content{
+  min-height: 127rpx;
+  font-size: 26rpx;
+  color: #888;
+  text-indent:50rpx;
+  background: #f6f6f6;
+  padding: 30rpx;
+}

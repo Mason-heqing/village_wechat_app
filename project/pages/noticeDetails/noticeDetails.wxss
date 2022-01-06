@@ -1,0 +1,37 @@
+/* pages/noticeDetails/noticeDetails.wxss */
+.container{
+  padding: 0;
+}
+.notice-details{
+  padding: 0 50rpx;
+}
+.notitle-title{
+  padding: 20rpx 0;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.notitle-date{
+  padding: 20rpx 0 40rpx 0;
+  font-size: 28rpx;
+  text-align: center;
+}
+.notitle-content image{
+  width: 100%;
+}
+rich-text{
+  word-break:break-all;
+}
+rich-text .richImg{
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  height: auto!important;
+  width: auto!important;
+}
+rich-text .richtext{
+  padding: 30rpx 0 !important;
+}
+rich-text.content{
+  word-break:break-all;
+}

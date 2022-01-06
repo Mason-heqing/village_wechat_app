@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "邀请您访问",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "modal": "/component/modal/modal",
+    "changePassword": "/component/chanePassword/chanePassword"
+  }
+}

@@ -1,0 +1,116 @@
+/* pages/callOrder/callOrder.wxss */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgba(246, 246, 246, 1);
+}
+
+.box {
+  width: 90%;
+  position: relative;
+}
+
+.main {
+  width: 90%;
+  height: 50px;
+  background: #FFFFFF;
+  box-shadow: 0Rpx 4rpx 24rpx #EEEEEE;
+  border-radius: 10rpx;
+  margin: 2px auto;
+  text-align: center;
+  line-height: 50px;
+}
+
+.mainmove {
+  position: absolute;
+  opacity: 0.7;
+}
+
+.maind {
+  background: #fff;
+  border: 1px dashed #efefef;
+}
+
+.mainend {
+  position: static;
+  opacity: 1;
+}
+
+.call-order {
+  padding: 0 30rpx;
+}
+
+.call-header {
+  padding: 30rpx 30rpx 20rpx 30rpx;
+}
+
+.header-title {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.header-title .title-name {
+  flex-grow: 1;
+  font-size: 32rpx;
+}
+
+.call-tips {
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.order-title-name {
+  position: relative;
+  left: 30rpx;
+  width: 100%;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  background: #eee;
+}
+
+.list-order {
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+}
+
+.list-order, .item-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.item-content {
+  flex-grow: 1;
+}
+
+.item-face{
+  padding: 0 20rpx 0 30rpx;
+}
+
+.item-face {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.item-face>image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* .order-icon{
+  width: 30rpx;
+  height: 30rpx;
+} */
+
+.order-icon>image {
+  width: 30rpx;
+  height: 30rpx;
+}

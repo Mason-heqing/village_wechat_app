@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "物业账单",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

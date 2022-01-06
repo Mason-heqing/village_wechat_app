@@ -1,0 +1,54 @@
+<!--pages/repair/repair.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="repair">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="repair-header">
+          <text class="xinhao">*</text> <input style="color:#333;" name="resRepair" maxlength="20" value="{{form.resRepair}}" bindinput='trim' placeholder="请输入标题" placeholder-style="color:#999;"></input>
+        </view>
+        <view class="repair-body">
+          <view class="content-title"><text class="content-xinhao">*</text><text>问题描述</text></view>
+          <view class="edit">
+            <image hidden="{{textareaDec}}" src="../images/textare_dec.png"></image>
+            <textarea name="resDesc" maxlength="300" style="padding-left:{{textareaPadding}}rpx" bindinput="trimDec" value="{{form.resDesc}}" bindfocus="textareaFocus" bindblur="textareaBlur" placeholder="请输入问题描述" placeholder-style="color:#999;" />
+            <view class="size-number" style="color:{{inputColor}}">
+              <text>已输入</text>
+              <text>{{siziNum}}</text>/<text>300</text>
+            </view>
+          </view>
+          <view class="updata">
+            <view class="title">
+              <image src="../images/tips.png"></image>
+              <text>为方便物业快速判断问题，请上传问题部位照片</text>
+            </view>
+            <view class="file">
+              <view class="file-content">
+                <view class="repair-file" wx:for="{{showImg}}" wx:key="*this">
+                  <view class="file-show">
+                    <image src="{{item}}"></image>
+                  </view>
+                  <view class="file-close" data-index="{{index}}" bindtap="close">
+                     <image src="../images/close.png"></image>
+                  </view>
+                </view>
+                <view class="uploadFile" bindtap="chooseImage" hidden="{{addFile}}">
+                  <!-- <input name="repairImage" value="{{form.repairImage}}" hidden="true"></input> -->
+                  <view class="add-file">
+                    <image wx:if="{{cameraImg}}" src="../images/faceImg.png"></image>
+                    <image wx:else src="{{form.repairImage}}"></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+            
+          </view>
+        </view>
+        <view class="submit" style="margin-top:{{subBtn}}rpx">
+              <!-- <button form-type="submit" class='{{namesContent && decContent ?"nodisabled":"disabled"}}' type="primary">提交</button> -->
+              <button wx:if="{{namesContent && decContent}}" form-type="submit" class='nodisabled {{btnColor?"compile-btn":"repair-btn"}}'>提交</button>
+              <button wx:else disabled="true" form-type="submit" class='compile-disabled {{btnColor?"compile-btn":"repair-btn"}}' type="primary">提交</button>
+            </view>
+      </form>
+    </view>
+  </view>
+</view>

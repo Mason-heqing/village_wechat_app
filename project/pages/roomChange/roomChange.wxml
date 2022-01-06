@@ -1,0 +1,50 @@
+<!--pages/roomChange/roomChange.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="room-change">
+      <view class="room-change-search">
+        <view class="search-img" bindtap="search" style="left:{{searchLeft}}rpx">
+          <image src="../images/search.png"></image>
+        </view>
+        <input  value="{{inputValue}}" style="text-align:{{inputText}}" bindinput="inputBind" bindfocus="bindfocus" bindblur="bindblur"  placeholder="请输入小区名称"  bindconfirm="bindconfirm"></input>
+      </view>
+      <view class="room-change-body" hidden="{{showMessage}}">
+        <view class="list-item" wx:for="{{list}}" wx:key="*this" data-houseId="{{item.houseId}}" bindtap="roomChange">
+          <view class="room-name">
+            <text>{{item.houseAddress}}</text>
+          </view>
+          <view class="other">
+            <view class="room-type" wx:if="{{1 == item.personSubtype}}">
+              <view class="message-info householder"></view>
+              <text>户主</text>
+            </view>
+            <view class="room-type" wx:elif="{{2 == item.personSubtype}}">
+              <view class="message-info dependents"></view>
+              <text>家属</text>
+            </view>
+            <view class="room-type" wx:elif="{{3 == item.personSubtype}}">
+              <view class="message-info tenant"></view>
+              <text>租客</text>
+            </view>
+            <view class="room-type" wx:else>
+              <view class="message-info otherColor"></view>
+              <text>其他</text>
+            </view>
+            <view class="room-adress">
+              <text>{{item.prov}}.{{item.city}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="no-message" hidden="{{noMessage}}">
+        <view class="no-image">
+          <image src="../images/noMessage.png"></image>
+        </view>
+        <view class="no-content">
+          <text>暂无数据</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

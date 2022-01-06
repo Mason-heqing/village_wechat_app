@@ -1,0 +1,88 @@
+<!--pages/againAppointment/againAppointment.wxml-->
+<view class="container">
+  <view class="page-body" hidden="{{personInfo}}">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section">
+        <view class="section__title">
+          姓名 <text class="star">*</text></view>
+        <view class="section_name">
+          <input name="name" style="text-align:right;" placeholder-style="color:#999" data-name='name' bindinput='trim' value="{{form.name}}" placeholder="请输入姓名" />
+        </view>
+      </view>
+      <view class="section">
+        <view class="section__title">
+          手机号 <text class="star">*</text></view>
+        <view class="section_name">
+          <input name="phone" placeholder-style="color:#999" style="text-align:right;" maxlength="11" data-name='phone' bindinput='trimPhone' value="{{form.phone}}" placeholder="请输入手机号码" />
+        </view>
+      </view>
+      <view class="section">
+        <view class="section__title">
+          到访时间 <text class="star">*</text></view>
+        <view class="section_name" style="text-align:right;">
+          <!-- <input name="phone" placeholder-style="color:#999" style="text-align:right;" data-name='date' value="{{form.date}}" disabled /> -->
+          <picker mode ="date"  start="{{date}}"   bindchange="bindMultiPickerChange" 
+           value="{{multiIndex}}">
+            <input name="visitDate" hidden='true' value="{{form.visitDate}}" />
+            <text style="color:{{timesColor}}">{{form.visitDate}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class="section">
+        <view class="section__title">
+          到访地址 <text class="star">*</text></view>
+        <view class="section_name" style="text-align:right;">
+          <input hidden="true" value="{{form.visitAddress}}" name="visitAddress"></input>
+          <text>{{form.visitAddress}}</text>
+        </view>
+      </view>
+      <view class="section">
+        <view class="section__title">
+          车牌号 <text class="star"></text></view>
+        <view class="section_name" style="text-align:right;">
+          <input name="numberPlate" placeholder-style="color:#999" style="text-align:right;" data-name='idNo' value="{{form.numberPlate}}" placeholder="请输入车牌号" />
+        </view>
+      </view>
+      <view class="section" hidden="{{isFaceImg}}">
+        <view class="section__title">
+          身份证号 <text class="star"></text></view>
+        <view class="section_name" style="text-align:right;">
+          <input name="idNum" placeholder-style="color:#999" style="text-align:right;" data-name='idNum' value="{{form.idNum}}" placeholder="请输入身份证号" />
+        </view>
+      </view>
+      <view class="section-face" hidden="{{isFaceImg}}">
+         <view class="face-title">
+          <text>人脸照片 </text><text style="color:#999">(添加后访客可刷脸通行) </text><text style="color:#EB102C;">*</text>
+         </view>
+         <view class="face-img">
+            <view class="face-select" bindtap="camera">
+                <input hidden="true" value="{{form.faceUrl}}" name="faceImg"></input>
+                <input hidden="true" value="{{form.houseId}}" name="houseId"></input>
+                <input hidden="true" value="{{form.checkType}}" name="checkType"></input>
+                <input hidden="true" value="{{form.visitPerson}}" name="visitPerson"></input>
+                <input hidden="true" value="{{form.visitPersonId}}" name="visitPersonId"></input>
+                <image src="{{form.faceUrl}}"></image>
+            </view> 
+            <view class="face-close" bindtap="closeFaceImg" hidden="{{close}}">
+              <!-- <text>x</text> -->
+              <image src="../images/close.png"></image>
+            </view>
+         </view>
+      </view>
+      <view style="width:100%;height:20rpx;border-top:1rpx solid #eee;"></view>
+      <view class="btn-area">
+        <!-- <button class='{{namesContent && phoneContent?"nodisabled":"disabled"}}' form-type="submit">生成通行凭证</button> -->
+        <button wx:if="{{namesContent && phoneContent && visitorTimes && faceImg}}" class='nodisabled' form-type="submit">
+          接受邀请
+        </button>
+        <!-- <button wx:if="{{namesContent && phoneContent && visitorTimes && faceImg}}" class='nodisabled' open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+          接受邀请
+        </button> -->
+        <button wx:else class='disabled' disabled="true" form-type="submit">接受邀请</button>
+      </view>
+    </form>
+  </view>
+  <view class="uploadInfo" hidden='{{uploadInfo}}' bindtap='showInFo'>
+    <!-- <image src='../../images/info.png'></image> -->
+  </view>
+</view>

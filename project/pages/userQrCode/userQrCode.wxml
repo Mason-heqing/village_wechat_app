@@ -1,0 +1,5 @@
+<!-- pages/userQrCode/userQrCode.wxml -->
+<view class="userCode" bindtap='saveSharePic'>
+      <image class="" src="{{codeImg}}"></image>
+      <text class="userCode_title">二维码有效期5分钟，过期自动刷新</text>
+</view>

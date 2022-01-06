@@ -1,0 +1,146 @@
+/* pages/administration/administration.wxss */
+.container{
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.house-list{
+  margin-top: 30rpx;
+  padding:0 30rpx 30rpx 30rpx;
+}
+.apply-btn{
+  margin-top: 30rpx;
+}
+.apply-btn>button{
+  width:72% !important;
+  height: 88rpx;
+  line-height: 2;
+  background:transparent;
+  font-weight:500;
+  color: #5656ED;
+  border: 2rpx solid #5656ED
+}
+.list-item{
+  border-radius: 14rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  box-shadow:0rpx 4rpx 24rpx rgba(238,238,238,1);
+
+}
+.house-header{
+  display: flex;
+  flex-wrap: nowrap;
+  padding:20rpx 30rpx;
+  border-bottom:1rpx solid #f0f0f0;
+  border-top-left-radius: 14rpx;
+  border-top-right-radius: 14rpx;
+}
+.house-name{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+}
+.house-name,.date{
+  font-size: 26rpx;
+  color: #666;
+}
+
+.house-name .dot{
+  width:4rpx;
+  height:4rpx;
+  background:#999;
+  border-radius: 50%;
+  margin:0 4rpx;
+}
+
+.house-type{
+  padding:0rpx 0 15rpx 0;
+  font-size: 32rpx;
+}
+.house-city{
+  padding:0;
+  font-size: 28rpx;
+}
+.add-house{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom:0;
+  left:0;
+  height: 128rpx;
+  width: 100%;
+  background: #fff;
+  border:1px solid rgba(219,219,219,1);
+  box-shadow:0px 2px 12px rgba(238,238,238,1);
+  text-align: center;
+}
+.add-house .add-btn{
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60% ;
+  height: 88rpx;
+  background: #5656ED;
+  box-shadow:0px 10px 20px rgba(86,86,237,0.3);
+  border-radius:10rpx;
+  color: #fff;
+}
+.add-house .add-btn image{
+  flex-wrap: nowrap;  
+  width:38rpx;
+  height:38rpx;
+}
+.add-house .add-btn text{
+  padding-left: 10rpx;
+  font-weight: bold;
+}
+.house-body{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 30rpx ;
+  height: 110rpx;
+}
+.left{
+  flex-grow: 1;
+}
+.right>image{
+  width: 130rpx;
+  height: 130rpx;
+}
+.modal-title{
+  border-bottom: 1rpx solid #ccc;
+  padding: 30rpx;
+}
+.model-body{
+  height:170rpx;
+  line-height: 170rpx;
+  text-align: center;
+}
+.no-message{
+  /* padding-top: 190rpx; */
+  position: absolute;
+  left: 50%;
+  margin-left: -190rpx;
+  top: 50%;
+  margin-top: -180rpx;
+}
+.no-image{
+  text-align: center;
+}
+.no-image>image{
+  width: 380rpx;
+  height: 358rpx;
+}
+.no-content{
+  margin: 50rpx 0 150rpx 0;
+  text-align: center;
+  color: #666;
+}

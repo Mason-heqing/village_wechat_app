@@ -1,0 +1,69 @@
+<!--pages/personal/personal.wxml-->
+<view class="container">
+  <view class="page-section">
+    <form bindsubmit="formSubmit">
+      <view class="personal-center">
+      <view class="person-name">
+        <view class="names">
+         真实姓名 <text class="star">*</text></view>
+      </view>
+      <view class="details">
+        <input name="name" bindinput="tirm" value="{{form.name}}" style="text-align:right;" placeholder="请输入您的真实姓名"></input>
+      </view>
+    </view>
+    <view class="person-body">
+      <view class="upfile">
+        <view class="upfile-title" hidden="{{showStatus}}">
+          人脸照片<text>（添加后住户可刷脸通行）</text>
+        </view>
+        <view class="upfile-img" hidden="{{showStatus}}">
+          <view class="file-icon" bindtap="upfile">
+            <input hidden="true" value="{{form.faceImg}}" name="faceImg"></input>
+            <image src="{{form.faceImg}}"></image>
+          </view>
+          <view class="file-close" bindtap="closeFaceImg" hidden="{{closeIcon}}">
+           <image src="../images/close.png"></image>
+          </view>
+        </view>
+        <view class="tips-info" hidden="{{showStatus}}">
+        <image src="../images/tips.png"></image>
+          <text> 若出现识别不通过的情况，建议尝试重新录入人脸,录入人脸时，录入照片清晰且为正脸，注意不可出现以下情况</text>
+        </view>
+        <view class="tips-image" hidden="{{showStatus}}">
+          <!-- <image src="../images/u919.png"></image> -->
+          <view class="tips-model">
+             <view class="tips-icon">
+               <image src="../images/vague_icon.png"></image>
+             </view>
+             <view class="tips-text">
+             <text class="no">×</text>
+             <text class="text-info">图片模糊</text>
+             </view>
+          </view>
+          <view class="tips-model">
+             <view class="tips-icon">
+               <image src="../images/excessive.png"></image>
+             </view>
+             <view class="tips-text">
+             <text class="no">×</text>
+             <text class="text-info">曝光过度</text>
+             </view>
+          </view>
+          <view class="tips-model">
+             <view class="tips-icon">
+               <image src="../images/dark_icon.png"></image>
+             </view>
+             <view class="tips-text">
+             <text class="no">×</text>
+             <text class="text-info">图像太暗</text>
+             </view>
+          </view>
+        </view>
+        <view class="submit-btn">
+          <button class='{{namesContent ? "nodisabled":"disabled"}}' form-type="submit">确定</button>
+        </view>
+      </view>
+    </view>
+    </form>
+  </view>
+</view>

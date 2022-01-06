@@ -1,0 +1,83 @@
+<!--pages/longRange/longRange.wxml-->
+<view class="container">
+  <view class="page-section content">
+    <view class="title" hidden="{{buildingShowMessage}}">
+       <view class="title-name">楼栋门禁</view>
+    </view>
+    <view class="long-range" hidden="{{buildingShowMessage}}">
+        <view class="long-range-model" wx:for="{{buildingList}}" wx:key="*this" style="background:{{item.online?'#fff':'#eee'}};box-shadow:{{item.online?'0px 2px 12px rgba(238,238,238,1);':'0px 2px 12px rgba(238,238,238,1)'}};" data-deviceId="{{item.deviceId}}" data-online="{{item.online}}" bindtap="openDoor">
+          <view class="lang-range-model-bg" style="background:{{item.online?'#fff':'#eee'}};box-shadow:{{item.online?'0px 2px 12px rgba(238,238,238,1);':'0px 2px 12px rgba(238,238,238,1)'}};">
+            <view class="icon">
+              <image wx:if="{{item.online}}" src="../images/key.png"></image>
+              <image wx:else src="../images/key_off.png"></image> 
+            </view>
+            <view class="long-range-name">
+              <text>{{item.address}}</text>
+            </view>
+          </view>
+        </view>
+     </view>
+     <view class="title"  hidden="{{unitShowMessage}}">
+        <view class="title-name">单元门禁</view>
+     </view>
+     <view class="long-range" hidden="{{unitShowMessage}}">
+        <view class="long-range-model" wx:for="{{unitList}}" wx:key="*this" data-deviceId="{{item.deviceId}}" data-online="{{item.online}}" bindtap="openDoor">
+          <view class="lang-range-model-bg" style="background:{{item.online?'#fff':'#eee'}};box-shadow:{{item.online?'0px 2px 12px rgba(238,238,238,1);':'0px 2px 12px rgba(238,238,238,1)'}};">
+            <view class="icon">
+             <image wx:if="{{item.online}}" src="../images/key.png"></image>
+             <image wx:else src="../images/key_off.png"></image> 
+             </view>
+          <view class="long-range-name">
+            <text>{{item.address}}</text>
+          </view>
+          </view>
+        </view>
+     </view>
+     <!-- <view class="no-message">
+       <view class="no-image">
+         <image src="../images/village_icon.png"></image>
+       </view>
+       <view class="no-content">
+         <text>暂无门禁权限</text>
+       </view>
+    </view> -->
+    <view class="title" hidden="{{showMessage}}">
+      <view class="title-name">小区门禁</view>
+    </view>
+    <view class="long-range" hidden="{{showMessage}}">
+        <view class="long-range-model" wx:for="{{list}}" wx:key="*this" data-deviceId="{{item.deviceId}}" data-online="{{item.online}}" bindtap="openDoor">
+          <view class="lang-range-model-bg" style="background:{{item.online?'#fff':'#eee'}};box-shadow:{{item.online?'0px 2px 12px rgba(238,238,238,1);':'0px 2px 12px rgba(238,238,238,1)'}};">
+            <view class="icon">
+             <image wx:if="{{item.online}}" src="../images/key.png"></image>
+             <image wx:else src="../images/key_off.png"></image> 
+          </view>
+          <view class="long-range-name">
+            <text>{{item.address}}</text>
+          </view>
+          </view>
+        </view>
+     </view>
+     <!-- <view class="no-message" hidden="{{noMessage}}">
+       <view class="no-image">
+         <image src="../images/village_icon.png"></image>
+       </view>
+       <view class="no-content">
+         <text>暂无门禁权限</text>
+       </view>
+    </view> -->
+    
+  </view>
+  <view class="page-section not-content" hidden="{{noContent}}">
+     <view class="no-message">
+       <view class="no-image">
+         <image src="../images/noMessage.png"></image>
+       </view>
+       <view class="no-content">
+         <text>暂无门禁权限</text>
+       </view>
+       <view class="again-get">
+           <button bindtap="again">重试</button>
+       </view>
+    </view>
+  </view>
+</view>

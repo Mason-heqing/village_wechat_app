@@ -1,0 +1,32 @@
+<!--pages/setTelephone/setTelephone.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="set-telephone">
+        <view class="tips-info">
+          <!-- <view class="tips-icon">
+             <image src="../images/password_tips.png"></image>
+          </view> -->
+          <view class="tips-content">
+            <text>更改手机号后，下次登录可使用新手机号登录，当前手机号:</text>
+            <view>
+              <text>{{currentPhone}}</text>
+            </view>
+          </view>
+        </view>
+        <form bindsubmit="formSubmit">
+          <view class="new-phone">
+             <!-- <image src="../images/mobile_phone.png"></image> -->
+             <input name="phone" placeholder="请输入新手机号码" placeholder-style="color:#999" maxlength="11" bindinput="phone" value="{{form.phone}}"></input>
+          </view>
+          <view class="code">
+            <!-- <image src="../images/password.png"></image> -->
+            <input name="code" placeholder="请输入验证码" placeholder-style="color:#999" bindinput="code" maxlength="6" value="{{form.code}}"></input>
+            <text class="code-btn {{buttonDisable?'blue':'grey'}}" style="color:{{codeColor}}" bindtap="sendCode">{{sendCode}}</text>
+          </view>
+          <view class="send-btn">
+            <button class='{{phoneContent && codeContent ? "nodisabled":"disabled"}}' form-type="submit">确定</button>
+          </view>
+        </form>
+    </view>
+  </view>
+</view>

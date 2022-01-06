@@ -1,0 +1,23 @@
+<!--pages/reportDetails/reportDetails.wxml-->
+<view class="container">
+  <view class="page-section">
+     <view class="repor-details">
+         <view class="word-title"><text>{{title}}</text></view>
+         <view class="date"><text>{{date}}</text></view>
+         <view class="content">
+           <view class="word"><text style="word-break:break-all;">{{content}}</text></view> 
+           <view class="img" >
+             <view class="thingPic" wx:for="{{thingPic}}" wx:key="*this">
+               <image  src="{{item}}" data-img="{{item}}"  bindtap='previewImg'></image>
+             </view>
+           </view>
+         </view>
+         <view class="other">
+            <view class="ohter-title"><text>物业处理意见</text></view>
+            <view class="other-content">
+               <text>{{opinion}}</text>
+            </view>
+         </view>
+     </view>
+  </view>
+</view>

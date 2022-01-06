@@ -1,0 +1,41 @@
+<!--pages/bill/bill.wxml-->
+<view class="container" style="background:{{bgColor}}">
+  <view class="page-section">
+    <view class="bill">
+      <view class="bill-search">
+        <view class="search-img" bindtap="search" style="left:{{searchLeft}}rpx">
+          <image src="../images/search.png"></image>
+        </view>
+        <view class="search-input">
+          <input value="{{inputValue}}" style="text-align:{{inputText}}" placeholder-style="color:#999"   placeholder="搜索内容" bindfocus="bindfocus" bindblur="bindblur" bindinput="inputBind" bindconfirm="bindconfirm"></input>
+        </view>
+      </view>
+      <view class="bill-list" hidden="{{showMessage}}">
+        <view style='height:{{scrollHeight}}px;'>
+          <view class="list-item" wx:for="{{list}}" wx:key="*this" data-downLoad="{{item.billImage}}" bindtap="details">
+            <view class="item-content">
+              <view class="content">
+                <text>{{item.billName}}</text>
+              </view>
+              <view class="details">
+                <image src="../images/arrow.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="no-message" hidden="{{noMessage}}">
+        <view class="no-image">
+          <image src="../images/noMessage.png"></image>
+        </view>
+        <view class="no-content">
+          <text>暂无数据</text>
+        </view>
+        <!-- <view class="again-get">
+          <button bindtap="again">重试</button>
+        </view> -->
+      </view>
+    </view>
+  </view>
+
+</view>

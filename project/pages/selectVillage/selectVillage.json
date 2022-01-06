@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择小区",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

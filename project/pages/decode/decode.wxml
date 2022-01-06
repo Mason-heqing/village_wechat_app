@@ -1,0 +1,4 @@
+<!--pages/decode/decode.wxml-->
+<view class="pages">
+   <image src="../images/door_bg.png"></image>
+</view>

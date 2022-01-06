@@ -1,0 +1,99 @@
+<!--pages/rechargeMsg/rechargeMsg.wxml-->
+<view class="wrapper">
+  <view class="" wx:if="{{fromType == 1}}">
+    <view class=" wrapper_msg">
+    充值详情
+  </view>
+  <view class="wrapper_item" style="margin-top:5rpx">
+    <view class="">
+    停车场所：
+    </view>
+    <view class="">
+    {{parkName}}
+    </view>
+  </view>
+  <view class="wrapper_item" style="margin-top:5rpx">
+    <view class="">
+    车牌号码：
+    </view>
+    <view class="">
+    {{plateNoB}}
+    </view>
+  </view>
+  </view>
+
+  <view class="sum_msg">
+    <view class="sum_msg-number">
+      {{ tg == 0 ? '缴费金额' : '充值金额' }}
+    </view>
+    
+    <view class="number_box" >
+      <view class="number_infoA" wx:if="{{fromType == 1}}">
+        ￥{{mMoney}}
+      </view>
+      <view class="number_infoB" wx:else>
+        <input value="{{mMoney}}"  data-name='{{mMoney}}' bindinput="inputedit" type="number" />
+      </view>
+    </view>
+    
+    <view class="balance">
+    
+    </view>
+  </view>
+  <view class="number_title">
+    选择支付方式
+  </view>
+  <view class="payment_box" >
+    <view class="payment_left" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="../images/weixin.png">
+      
+        </image>
+        <view class="payment_title">
+          微信支付
+        </view>
+    </view>
+    <label class="radio">
+      <radio value="r1" checked="true" />
+    </label>
+  </view>
+  <view class="bottom_pay" wx:if="{{affirm}}">
+  <!-- 临时卡支付 -->
+    <button   hover-class="hover" bindtap="temporaryPayMoney" wx:if="{{orderId != ''}}">支 付</button>
+    <!-- 储值卡支付 -->
+    <button   hover-class="hover" bindtap="payMoney" wx:else>支 付</button>
+  
+  </view>
+
+<!-- 自定义弹窗 -->
+    <!-- <view class="show_dalog" wx:if="{{dalogBox}}">
+      <view class="dalog_box">
+        <view class="dalog_box-title">
+          储值卡缴费
+        </view>
+        <view class="dalog_box-content">
+          <view class="content_a">
+            1.车牌号码：{{plateNoB}}
+          </view>
+          <view class="content_b">
+            2.支付金额:￥{{mMoney}}
+          </view>
+        </view>
+        <view class="_px"></view>
+        <view class="dalog_box-btn">
+          <view class="btn_cancel" bindtap='cancel'>
+            取消
+          </view>
+          <view class="btn_confirm" bindtap='confirm'>
+            去支付
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    <!-- 支付插件 -->
+  <!-- <view class="" wx:if="{{payStatus}}" style="margin-top:130rpx;">
+    <pay-ment infos="{{ infos }}" bindpaystatus="payback" />
+  </view> -->
+
+
+</view>

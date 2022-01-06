@@ -1,0 +1,49 @@
+<!--pages/city/city.wxml-->
+<view class="title">
+  <view class="title_list">
+      <view class="title-search">
+         <view class="search-img" style="left:{{searchLeft}}rpx" bindtap="search">
+           <image src="../images/search.png"></image>
+         </view>
+         <view class="search-input">
+           <input value="{{inputValue}}" style="text-align:{{inputText}}"  bindfocus="bindfocus" bindblur="bindblur"  bindinput='inputBind' placeholder="请输入城市名称" placeholder-style="text-align:{{inputText}}" bindconfirm="bindconfirm"></input>
+         </view>
+      </view>
+  </view>
+  <!-- <button>确认</button> -->
+  <view style='font-size:32rpx;padding:10rpx 0 10rpx 25rpx;' bindtap="location" class='iconfont icon-dingwei'>定位: {{cityName}}</view>
+</view>
+<scroll-view   scroll-y="true" style="height: {{winHeight}}px;" scroll-into-view="{{scrollTopId}}" class="city_list" hidden="{{showMessage}}">
+    <block wx:for="{{city}}" wx:key="index" wx:for-index="idx" wx:for-item="cityName">
+      <text id="{{idx}}" class="list_tit">{{idx}}</text>
+      <block wx:for="{{cityName}}" wx:key="index">
+         <view class="list_con" data-city="{{item.name}}" data-cityId="{{item.id}}" bindtap="bindCity">{{item.name}}</view>
+      </block>
+    </block>
+</scroll-view>
+ <view class="no-message" hidden="{{noMessage}}">
+        <view class="no-image">
+         <image src="../images/noMessage.png"></image>
+       </view>
+       <view class="no-content">
+         <text>暂无数据</text>
+       </view>
+       </view>
+<!--城市选择列表-->
+<!-- <view class="scroll_list" 
+      bindtouchstart="chStart"
+      bindtouchend="chEnd"
+      catchtouchmove="chMove"
+      style="background: rgba(0,0,0,{{trans}});"
+      >
+   <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName" wx:key="index">
+      <block wx:if="{{idx != '热门城市'}}">
+       <view id="{{idx}}" class="scroll_list_chi" style="line-height:{{lineHeight}}px ; height:{{lineHeight}}px ;font-size:{{lineHeight/1.7}}px;" bindtouchstart="getWords" bindtouchend="setWords">{{idx}}</view>
+      </block>
+    </block>
+</view> -->
+
+<!--选择显示-->
+<view hidden="{{hidden}}" class="showwords">
+  {{showwords}}
+</view>

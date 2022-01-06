@@ -1,0 +1,112 @@
+<!--pages/houseHold/houseHold.wxml-->
+<view class="containers">
+  <view class="page-section">
+    <view class="house-hold">
+      <view class="house-header">
+        <view class="house-header-content">
+          <view class="header-bgColor">
+            <image src="../images/bg.png"></image>
+          </view>
+          <view class="header-info">
+            <view class="info-padding">
+              <view class="house-village">
+                <image src="../images/index.png"></image>
+                <text>{{villageName}}</text>
+              </view>
+              <view class="house-unit">
+                <text>{{unitName}}</text>
+              </view>
+              <view class="house-tool">
+                <view class="tool-model" wx:for="{{tool}}" wx:key="*this" bindtap="{{item.events}}">
+                  <image src="{{item.img}}"></image>
+                  <text>{{item.name}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="house-body">
+        <scroll-view scroll-y style='height:{{scrollHeight}}px;' hidden="{{showMessage}}">
+          <view class="list" wx:for="{{list}}" wx:key="*this">
+            <view class="list-bg">
+              <image wx:if="{{5 == item.bindStatus}}" src="../images/Audit_bg.png"></image>
+              <image wx:elif="{{0 == item.bindStatus || 1 == item.bindStatus}}" src="../images/Property_bg.png"></image>
+              <image wx:elif="{{2 == item.bindStatus || 4 == item.bindStatus}}" src="../images/failed.png"></image>
+            </view>
+            <view class="list-info">
+              <view class="list-model" bindtap="details" data-id="{{item.id}}">
+                <view class="person-face">
+                  <image hidden="{{isFaceImg}}" src="{{item.faceUrl}}"></image>
+                  <text>{{item.personName}}</text>
+                </view>
+                <view class="house-type">
+                  <text wx:if="{{item.personSubtype == 1}}" class="khaki">户主</text>
+                  <text wx:elif="{{item.personSubtype == 2}}" class="violet">家属</text>
+                  <text wx:elif="{{item.personSubtype == 3}}" class="blue">租客</text>
+                  <text wx:elif="{{item.personSubtype == 5}}" class="green">其他</text>
+                </view>
+                <view class="info-details">
+                  <image src="../images/arrow.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>
+<modal show="{{showModal}}" height='280px' width='72%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
+  <view class='modal-content'>
+    <view class="modal-title">
+      <text>呼叫编号</text>
+    </view>
+    <view class="model-body">
+      <view class="model-content">
+        <text class="content-name">围墙机呼叫编号</text>
+        <image src="../images/telephone.png"></image>
+        <text class="content-phone">{{residenInfo.residenceCallNo}}</text>
+      </view>
+      <view class="model-content">
+        <text class="content-name">单元机呼叫编号</text>
+        <image src="../images/telephone.png"></image>
+        <text class="content-phone">{{residenInfo.unitCallNo}}</text>
+      </view>
+    </view>
+  </view>
+</modal>
+<!-- <changePassword show="{{openDoorMessage}}" height='200px' width='72%' bindchange="changePasswrd">
+  <view class='modal-content'>
+    <view class="modal-title">
+      <text>开门密码</text>
+    </view>
+    <view class="model-body">
+      <view class="model-content">
+        <text bindinput="inputPassword">{{residenInfo.devicePassword}}</text>
+      </view>
+    </view>
+  </view>
+</changePassword> -->
+<view class='mask' hidden="{{openDoorMessage}}" bindtap='hiddenMask'>
+  <view class='modal-content' style='height:224px;width:72%' catchtap='stopM'>
+    <scroll-view scroll-y class='main-content'>
+      <view class='modal-content'>
+        <view class="modal-title">
+          <text>开门密码</text>
+        </view>
+        <view class="model-body">
+          <view class="model-content">
+            <text bindinput="inputPassword">{{residenInfo.devicePassword}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="modal-btn-close" catchtap='clickMask'>
+      <image src="../images/close_icon.png"></image>
+    </view>
+    <view class="changePassword">
+      <button bindtap="changePasswrd">更新密码</button>
+    </view>
+  </view>
+</view>

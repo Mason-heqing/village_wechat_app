@@ -1,0 +1,90 @@
+/* pages/orderDetails/orderDetails.wxss */
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background:rgb(242, 242, 242);
+}
+.visitor-header{
+  position: relative;
+  height: 500rpx;
+  background: #fff;
+}
+.person-face{
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  margin-left:-140rpx;
+  margin-top: -140rpx;
+  width: 280rpx;
+  height: 280rpx;
+}
+.person-face>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.face-bg{
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-left:-140rpx;
+  margin-top: -140rpx;
+  width: 280rpx;
+  height: 280rpx;
+}
+.face-bg>image{
+  width: 100%;
+  height: 100%;
+}
+.visitor-body{
+  margin-top: 20rpx;
+}
+.list-item{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
+  padding: 30rpx;
+  background: #fff;
+  border-bottom: 2rpx solid #eee;
+}
+.faceImg{
+  display: flex;
+  align-items: center;
+}
+.newClass{
+  flex-grow: 1;
+}
+.adress-visitor{
+  width: 30%;
+}
+/* .content{
+  flex-grow: 2;
+} */
+.faceImg>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.faceImg .open{
+padding:0 10rpx;
+}
+.faceImg .password{
+  padding-top: 14rpx;
+  color: #E73047;
+  font-size: 22rpx;
+}
+.tool-btn{
+  margin-top: 60rpx;
+}
+.tool-btn button{
+  width: 80% !important;
+  background: #E73047;
+  color: #fff;
+  /* font-weight: 100; */
+}

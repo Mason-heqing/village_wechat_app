@@ -1,0 +1,70 @@
+<!--pages/administration/administration.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="house-list"  hidden="{{showMessage}}" style='height:{{scrollHeight}}px;overflow:scroll'>
+        <view class="list-item" wx:for="{{houseList}}" wx:key="*this" data-info="{{item}}" bindtap="details">
+          <view class="house-header">
+            <view class="house-name">
+              <view class="adress-name"><text>{{item.country}}</text></view>
+              <view class="adress-name dot"></view>
+              <view class="adress-name"> <text>{{item.province}}</text></view>
+              <view class="adress-name dot"></view>
+              <view class="adress-name"><text>{{item.city}}</text></view>
+              <view class="adress-name dot"></view>
+              <view class="adress-name"><text>{{item.areas}}</text></view>              
+            </view>
+            <view class="date">
+              有效期限:
+              <text>{{item.date}}</text>
+            </view>
+          </view>
+          <view class="house-body">
+            <view class="left">
+              <view class="house-content">
+                <view class="house-type">
+                  <text>{{item.personSubtype}}</text>
+                </view>
+              </view>
+              <view class="house-content">
+                <view class="house-city">
+                  <text>{{item.area}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="right">
+              <image wx:if="{{0 == item.bindStatus && item.identityAudit}}" src="../images/identityAudit.png"></image>
+              <image wx:if="{{(0 == item.bindStatus || 1 == item.bindStatus || 5 == item.bindStatus) && !item.identityAudit}}" src="../images/house_reviewed.png"></image>
+              <image wx:elif="{{2 == item.bindStatus || 4 == item.bindStatus}}" src="../images/house_refuse.png"></image>
+              <image wx:elif="{{8 == item.bindStatus}}" src="../images/house_cancel.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    <view class="no-message" hidden="{{noMessage}}">
+      <view class="no-image">
+        <image src="../images/noMessage.png"></image>
+      </view>
+      <view class="no-content">
+        <text>暂无数据</text>
+      </view>
+    </view>
+  </view>
+  <view class="add-house">
+    <value class="add-btn" bindtap="addVillage">
+      <image src="../images/adds.png"></image>
+      <text class="apply">房屋申请</text>
+    </value>
+  </view>
+</view>
+<modal show="{{openDoorMessage}}" height='24%' width='80%' bindcancel="modalCancel" bindconfirm='modalConfirm'>
+  <view class='modal-content'>
+    <view class="modal-title">
+      <text>提示信息</text>
+    </view>
+    <view class="model-body">
+      <view class="model-content">
+        <text>您未填写个人信息是否现在去填写</text>
+      </view>
+    </view>
+  </view>
+</modal>

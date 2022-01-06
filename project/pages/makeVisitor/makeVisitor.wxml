@@ -1,0 +1,107 @@
+<!--pages/makeVisitor/makeVisitor.wxml-->
+<view class="containers">
+   <view class="page-section">
+       <view class="page-header">
+           <view class="header-left {{active?'currentIndex':''}}" bindtap="currentBtn">
+             <text>当前预约</text>
+           </view>
+           <view class="header-right {{active?'':'currentIndex'}}" bindtap="historyBtn">
+             <text>历史预约</text>
+           </view>
+       </view>
+       <view class="page-body" hidden="{{showMessage}}">
+          <block wx:if="active">
+              <view class="list-item" wx:for="{{currentAppointmentlist}}" wx:key="*this">
+              <view class="item-up" data-id="{{item.id}}" bindtap="details">
+                <view class="item-bg">
+                  <image wx:if="{{0 === item.checkType}}" src="../images/visitor_status_1_icon.png"></image>
+                  <image wx:elif="{{1 === item.checkType}}" src="../images/visitor_status_3_icon.png"></image>
+                  <image wx:elif="{{2 === item.checkType}}" src="../images/visitor_status_2_icon.png"></image>
+                  <image wx:elif="{{3 === item.checkType}}" src="../images/visitor_status_5_icon.png"></image>
+                  <image wx:else src="../images/visitor_status_4_icon.png"></image>
+                </view>
+                <view class="item-info">
+                  <view class="up-left" hidden="{{isFaceImg}}">
+                    <image src="{{item.faceUrl}}"></image>
+                  </view>
+                  <view class="up-right">
+                    <view class="up-title">
+                      <text>{{item.name}}</text>
+                    </view>
+                    <view class="up-content">
+                      <image src="../images/visitor_address_icon.png"></image>
+                      <text>{{item.address}}</text>
+                    </view>
+                  </view>
+                </view>
+                </view>
+                <view class="item-down">
+              <view class="down-left">
+                <text>{{item.visitDate}}</text>
+              </view>
+              <view class="down-right" wx:if="{{0 === item.checkType}}">
+                <text class="cancel" data-id='{{item.id}}' bindtap="cancelBtn">取消</text>
+              </view>
+              <!-- <view class="down-right" wx:elif="{{1 === item.checkType}}">
+                <text class="delect" data-type='0' data-id='{{item.id}}' bindtap="delete">删除</text>
+              </view> -->
+              <view class="down-right" wx:elif="{{2 === item.checkType}}">
+                <text class="cancel" data-id='{{item.id}}' bindtap="cancelBtn">取消</text>
+              </view>
+              <!-- <view class="down-right" wx:elif="{{3 === item.checkType}}">
+                <text class="delect" data-type='0' data-id='{{item.id}}' bindtap="delete">删除</text>
+              </view> -->
+              <!-- <view class="down-right" wx:else>
+                <text class="delect" data-type='0' data-id='item.id' bindtap="delete">删除</text>
+                <text class="consent" data-item='{{item}}' bindtap="appointment">预约</text>
+              </view> -->
+            </view>
+            </view>
+          </block>
+          <block wx:if="!active">
+              <view class="list-item" wx:for="{{historyAppointmentlist}}" wx:key="*this">
+                <view class="item-up" data-id="{{item.id}}" bindtap="details">
+                  <view class="item-bg">
+                    <image wx:if="{{0 === item.checkType}}" src="../images/visitor_status_4_icon.png"></image>
+                    <image wx:elif="{{1 === item.checkType}}" src="../images/visitor_status_3_icon.png"></image>
+                    <image wx:elif="{{2 === item.checkType}}" src="../images/visitor_status_2_icon.png"></image>
+                    <image wx:elif="{{3 === item.checkType}}" src="../images/visitor_status_5_icon.png"></image>
+                    <image wx:else src="../images/visitor_status_4_icon.png"></image>
+                  </view>
+                  <view class="item-info">
+                    <view class="up-left" hidden="{{isFaceImg}}">
+                      <image src="{{item.faceUrl}}"></image>
+                    </view>
+                    <view class="up-right">
+                      <view class="up-title">
+                        <text>{{item.name}}</text>
+                      </view>
+                      <view class="up-content">
+                        <image src="../images/visitor_address_icon.png"></image>
+                        <text>{{item.address}}</text>
+                      </view>
+                    </view>
+                  </view>
+                  </view>
+                  <view class="item-down">
+                <view class="down-left">
+                  <text>{{item.visitDate}}</text>
+                </view>
+                <!-- <view class="down-right">
+                  <text class="delect" data-type='1' data-id='{{item.id}}' catchtap="delete">删除</text>
+                  <text class="consent" data-item='{{item}}' catchtap="appointment">预约</text>
+                </view> -->
+              </view>
+              </view>
+          </block>
+       </view>
+       <view class="no-message" hidden="{{noMessage}}">
+        <view class="no-image">
+          <image src="../images/noMessage.png"></image>
+        </view>
+        <view class="no-content">
+          <text>暂无数据</text>
+        </view>
+      </view>
+   </view>
+</view>

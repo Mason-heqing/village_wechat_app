@@ -1,0 +1,11 @@
+<!--pages/errorPage/errorPage.wxml-->
+<view class="">
+  <view class="su_wrapper">
+    <image class="" src="../../pages/images/bg.png" >
+      
+    </image>
+    <view class="bottom_pay">
+      <button>支付失败</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,123 @@
+/* pages/houseDetails/houseDetails.wxss */
+.container{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: rgb(242,242,242);
+}
+.details-header{
+  position: relative;
+  height:500rpx; 
+  text-align: center;
+  background: #fff;
+}
+.person-face{
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  margin-top: -140rpx;
+  margin-left: -140rpx;
+  width: 280rpx;
+  height: 280rpx;
+}
+.person-face>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.details-body{
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.flag{
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-top: -140rpx;
+  margin-left: -140rpx;
+  width: 280rpx;
+  height: 280rpx;
+}
+.flag>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.details-list{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
+  /* padding: 0 30rpx; */
+  height: 100rpx;
+  /* background: #fff; */
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.name,.content{
+  flex-grow: 1;
+}
+.name>image{
+  position: relative;
+  top:4rpx;
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 10rpx;
+}
+.content{
+  text-align: right;
+}
+.edit{
+  margin-top: 50rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background: #eee;
+}
+.reject,.ok{
+  flex-grow: 1;
+}
+.reject button{
+  width: 70% !important;
+  color: #fff;
+  background: rgb(255, 59,48);
+  /* font-weight: 100 !important; */
+}
+.ok button{
+  width: 70% !important;
+  color: #fff;
+  background: rgb(0, 121, 254);
+  /* font-weight: 100 !important; */
+}
+.property-btn{
+   /* margin-top: 60rpx; */
+   background:#eee;
+}
+.property-btn>button{
+  width: 70% !important;
+  height: 88rpx;
+  line-height: 1.8;
+  background: #E73047;
+  color: #fff;
+  /* font-weight: 100; */
+}
+.model-content{
+  display: flex;
+  flex-direction: row;
+  padding: 65rpx 50rpx 30rpx 50rpx;
+}
+.edit-icon>image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+textarea{
+  /* border: 1rpx solid red; */
+  width:100%;
+  height: 200rpx;
+}
+

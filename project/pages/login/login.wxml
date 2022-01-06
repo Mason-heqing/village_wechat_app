@@ -1,0 +1,33 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="login-form">
+    <view class="page-body">
+      <form catchsubmit="formSubmit" catchreset="formReset">
+        <view class="item">
+          <view class="login-item">
+            <view class="login-item-info">
+               <image wx:if="{{'wx78a03393552c2ceb' == wxAppId}}" src="../images/other_logo.png"></image>
+               <image wx:else src="../images/logo.png"></image>
+            </view>
+            <view class="user-name">
+              <image src="../images/phone_login.png"></image>
+              <input name="phone" value="{{form.phone}}" maxlength="11" bindinput="phoneInput" placeholder="请输入手机号码" placeholder-style="color:#999;" />
+            </view>
+            <view class="user-name">
+              <image src="../images/password_login.png"></image>
+              <input type="password" name="password" value="{{form.password}}"  bindinput="passwordInput" placeholder="请输入密码" placeholder-style="color:#999;" />
+            </view>
+          </view>
+          <view class="login-item bottom login-btn-margin">
+            <button wx:if="{{phoneContent && passwordContent}}" class='login-btn nodisabled' form-type="submit">登录</button>
+            <button wx:else class='login-btn disabled' disabled="true" form-type="submit">登录</button>
+          </view>
+          <view class="others">
+            <text class="register" bindtap="register">注册新用户</text>
+            <text bindtap="forgetPassword">忘记密码?</text>
+          </view>
+        </view>
+      </form>
+    </view>
+  </view>
+</view>

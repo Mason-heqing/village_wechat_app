@@ -1,0 +1,21 @@
+/* pages/errorPage/errorPage.wxss */
+.su_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50rpx 0;
+}
+.bottom_pay {
+  margin-top: 290rpx;
+
+}
+.bottom_pay button {
+  width: 650rpx;
+  background: #e64340;
+  font-size: 36rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #FFFFFF;
+  opacity: 1;
+}

@@ -1,0 +1,39 @@
+<view class="pages">
+<!-- 没有数据的时候做点什么 -->
+  <view class="no-image" wx:if="{{showHie}}">
+    <image class="" src="../images/noMessage.png">
+    </image>
+    <view class="no-text" >
+      暂无数据
+    </view>
+  </view>
+
+  <view class="car_wrapper" wx:for="{{dataList}}"  data-item='{{item}}' wx:key="{{index}}" >
+    <view class="wrapper_left">
+      {{index}}
+    </view>
+    <view class="car_msgBox">
+      <view class="car_title">
+        <view class="title_numb">
+          {{item.plateNo}}
+        </view>
+        <view class="car_type">
+          {{item.cardTypeName}}
+        </view>
+      </view>
+      <view class="car_img">
+        <image class="" src="../images/qiche.png">
+          
+        </image>
+        <view class="car_name">
+          {{item.carModelName }}
+        </view>
+      </view>
+    </view>
+    <image class="delete_item" src="../images/close.png" data-id='{{item.id}}' bindtap='deleteCar'>
+      
+    </image>
+  </view>
+    <button class="add_news" style="width:690rpx" bindtap='bindingCard'>新增车辆</button>
+</view>
+

@@ -1,0 +1,87 @@
+/* pages/setTelephone/setTelephone.wxss */
+.container{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: rgb(242, 242,242);
+}
+.set-telephone{
+  /* padding: 50rpx; */
+}
+.tips-info{
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 30rpx 30rpx 80rpx 30rpx;
+  background: #fff;
+  /* margin-bottom: 100rpx;
+  border: 1rpx solid rgb(255,225, 245);
+  border-radius: 10rpx;
+  background:rgb(255, 245, 230); */
+  font-size: 24rpx;
+  color: #999;
+}
+.tips-info .tips-content{
+  padding-left: 15rpx;
+}
+.tips-icon>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.new-phone,.code{
+  position: relative;
+  padding: 0 30rpx;
+  background: #fff;
+  /* margin-bottom: 40rpx; */
+}
+.new-phone input,.code input{
+  padding: 30rpx 0;
+  /* border: 1rpx solid #ccc; */
+  /* border-radius: 10rpx; */
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.code input{
+  border-bottom: 1rpx solid transparent;
+}
+.code input{
+  padding-right: 190rpx;
+}
+.new-phone>image,.code>image{
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.code .code-btn{
+  position: absolute;
+  top: 24rpx;
+  right:30rpx;
+  /* background: red; */
+  padding:10rpx 22rpx;
+  color: #5656ED;
+  font-size:24rpx;
+  border:1rpx solid #ddd;
+  border-radius: 10rpx;
+}
+.send-btn{
+  /* margin-top: 100rpx; */
+  position:absolute;
+  top: 45%;
+  width: 100%;
+}
+.send-btn button{
+  width: 72% !important;
+  height: 88rpx;
+  line-height: 2;
+  background: #5656ED;
+  color: #fff;
+  /* font-weight: 100; */
+}
+.blue{
+  color: #5656ED;
+}
+.grey{
+  color: #999;
+}

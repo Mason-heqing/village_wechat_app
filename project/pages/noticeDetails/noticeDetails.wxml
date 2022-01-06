@@ -1,0 +1,16 @@
+<!--pages/noticeDetails/noticeDetails.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="notice-details">
+       <view class="notitle-title">
+          <text>{{noticeTitle}}</text>
+       </view>
+       <view class="notitle-date">
+         <text>{{createTime}}</text>
+       </view> 
+       <view class="notitle-content">
+          <rich-text style="word-break:break-all;" nodes="{{noticeContent}}"></rich-text>
+       </view>
+    </view>
+  </view>
+</view>

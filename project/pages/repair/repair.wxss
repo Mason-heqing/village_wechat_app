@@ -1,0 +1,163 @@
+/* pages/repair/repair.wxss */
+.container{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: rgb(242, 242,242);
+}
+.repair-header{
+  position: relative;
+  margin:20rpx 0 10rpx 0;
+  padding: 30rpx 50rpx;
+  background: #fff;
+  color: #888;
+}
+.repair-body{
+  padding:30rpx;
+  background: #fff;
+}
+.content-title{
+  position: relative;
+  
+}
+.edit{
+  position: relative;
+  margin-top: 20rpx;
+  margin-left: 24rpx;
+  border:2rpx solid #ccc;
+  border-radius: 10rpx;
+  background: #fff;
+}
+.edit>image{
+  position: absolute;
+  top:34rpx;
+  left: 30rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.edit textarea{
+  width: 91%;
+  padding: 30rpx;
+  height: 200rpx !important;
+  /* border:2rpx solid #ccc; */
+  /* border-radius: 10rpx; */
+  
+}
+.updata{
+  padding: 30rpx 0 0 0;
+}
+.title>image{
+  width: 26rpx;
+  height: 26rpx;
+}
+.title text{
+  padding-left: 10rpx;
+  color: #888;
+  font-size: 26rpx;
+}
+.uploadFile .add-file{
+  width: 200rpx;
+  height: 200rpx;
+}
+.add-file>image{
+  width: 100%;
+  height: 100%;
+}
+.submit{
+  /* margin-top:180rpx; */
+}
+.submit button{
+  width: 80% !important;
+  height: 88rpx;
+  line-height:2;
+  /* background:#E73047; */
+  color: #fff;
+  border-radius: 10rpx;
+  /* font-weight: 100; */
+}
+.xinhao{
+  position: absolute;
+  top: 26rpx;
+  left: 30rpx;
+  color: red;
+
+}
+.content-xinhao{
+  padding-right: 10rpx;
+  color: red;
+}
+.repair-btn{
+  background: #E73047 !important;
+}
+.compile-btn{
+  background: #5656ED !important;
+}
+.file{
+  padding:1 50rpx;
+ background: #fff;
+}
+.repair-file{
+  position: relative;
+}
+.file-show{
+  width:170rpx;
+  height: 170rpx;
+}
+.file-show>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+.file-close{
+  position: absolute;
+  top: -24rpx;
+  left:174rpx;
+  padding: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  /* background: #888;
+  color: #fff;
+  line-height: 40rpx;
+  text-align: center;
+  border-bottom-left-radius:50%; */
+}
+.file-close>image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.file-content{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10rpx;
+  padding-top: 30rpx;
+}
+
+.repair-file,.uploadFile{
+  display: flex;
+  justify-content: center;
+  width: 33.3333%;
+  margin-bottom: 30rpx;
+}
+.uploadFile .add-file{
+  width: 170rpx;
+  height: 170rpx;
+}
+.add-file>image{
+  width: 100%;
+  height: 100%;
+}
+
+.compile-disabled{
+  /* background: #E73047 !important; */
+  color: #fff !important;
+  opacity: 0.5;
+  /* font-weight: 100 !important; */
+}
+.size-number{
+  padding: 30rpx;
+  /* background: #fff; */
+  font-size: 24rpx;
+  text-align: right;
+}

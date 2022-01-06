@@ -1,0 +1,59 @@
+<!--pages/selectVillage/selectVillage.wxml-->
+<view class="container">
+  <view class="page-section">
+    <view class="village">
+      <view class="village-search">
+        <view class="search-img" bindtap="search" style="left:{{searchLeft}}rpx">
+          <image src="../images/search.png"></image>
+        </view>
+        <view class="search-input">
+          <input value="{{inputValue}}" bindfocus="bindfocus" bindblur="bindblur" bindinput='inputBind' style="text-align:{{inputText}}" placeholder="请输入小区名称" bindconfirm="bindconfirm"></input>
+        </view>
+      </view>
+      <view class="adress" bindtap="city">
+        <view class="currentAdress">
+          <text>当前城市</text>
+        </view>
+        <view class="swicth">
+          <text>{{currentCity}}</text>
+          <image src="../images/down.png"></image>
+        </view>
+      </view>
+      <scroll-view scroll-y style='height:{{scrollHeight}}px;' hidden="{{showMessage}}">
+        <view class="village-list">
+          <view class="list-item" wx:for="{{list}}" wx:key="*this" data-info="{{item}}" bindtap="details">
+            <view class="item-village">
+              <text>{{item.deviceGroupName}}</text>
+            </view>
+            <view class="item-city">
+              <!-- <text>{{item.areaName}}</text> -->
+              <view class="adress-name">
+                <text>{{item.country}}</text>
+              </view>
+              <view class="adress-name dot"></view>
+              <view class="adress-name">
+                <text>{{item.province}}</text>
+              </view>
+              <view class="adress-name dot"></view>
+              <view class="adress-name">
+                <text>{{item.city}}</text>
+              </view>
+              <view class="adress-name dot"></view>
+              <view class="adress-name">
+                <text>{{item.area}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="no-message" hidden="{{noMessage}}">
+        <view class="no-image">
+          <image src="../images/noMessage.png"></image>
+        </view>
+        <view class="no-content">
+          <text>暂无数据</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
